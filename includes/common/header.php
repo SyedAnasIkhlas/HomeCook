@@ -24,19 +24,44 @@
 
 	</head>
 	<body>
+		<nav>
 
-		<div id="typed-strings">
+			<div id="typed-strings">
+				<p>HomeCook</p>
+				<p>HomeCook</p>
+			</div>
+
+			<div class="togglearea">
+				<span class="brand">
+					<a class="navbar-brand" href="#"><span id="typed"></span></a>
+				</span>
+				<span class="menu">
+					<label for="toggle">
+						<span>&#9776;</span>
+					</label>
+				</span>
+			</div>
+			<input type="checkbox" id="toggle">
+			<div class="navbar">
+				<a href="#">Home</a>
+				<a href="#">Sell</a>
+				<a href="#">Buy</a>
+				<a href="#">About</a>
+			</div>
+		</nav>
+
+		<!-- <div id="typed-strings">
 			<p>HomeCook</p>
 			<p>HomeCook</p>
 		</div>
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
 		  <a class="navbar-brand" href="#"><span id="typed"></span> </a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 
-		  <img src="https://img.icons8.com/color/50/000000/chili-pepper.png">
+		  <img src="https://img.icons8.com/color/50/000000/chili-pepper.png" class="headerLogo">
 
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <form class="form-inline my-2 my-lg-0">
@@ -49,4 +74,4 @@
 		    </form>
 		  </div>
 
-		</nav>
+		</nav> -->
