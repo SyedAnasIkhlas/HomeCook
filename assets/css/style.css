@@ -16,7 +16,7 @@ body
 {
 	background-color: gray;
 	display:flex;
-	justify-content:flex-start;
+	justify-content: space-between;
 }
 
 .navbar a
@@ -70,7 +70,7 @@ body
 
 .togglearea .brand
 {
-
+	
 }
 
 .togglearea .menu
@@ -155,6 +155,55 @@ navbar
 	width: 20px;
 }
 
+
+
+
+.navbar div .brand
+{
+	animation: type 3s steps(8);
+	overflow:hidden;
+	white-space: nowrap;
+}
+
+.brand{
+	animation: type 3s steps(8);
+	overflow:hidden;
+	white-space: nowrap;
+	position: relative;
+	right: 100px;
+}
+
+.sp-brand{
+	animation: type 3s steps(8);
+	overflow:hidden;
+	white-space: nowrap;
+	position: relative;
+	right: 100px;
+}
+
+.searchBox
+{
+	display: flex;
+	justify-content: flex-end;
+	margin-left: 100px;
+}
+
+
+
+/*KeyFrames*/
+@keyframes type
+{
+	0%
+	{
+		width: 0ch;
+	}
+
+	100%
+	{
+		width: 8ch;
+	}
+}
+
 /*media querey*/
 
 /*for nav bar*/
@@ -183,4 +232,9 @@ navbar
 		justify-content: flex-start;
 
 	}
+
+	.brand{
+	display: none;
+}
+	
 }

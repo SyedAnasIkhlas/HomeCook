@@ -26,14 +26,9 @@
 	<body>
 		<nav>
 
-			<div id="typed-strings">
-				<p>HomeCook</p>
-				<p>HomeCook</p>
-			</div>
-
 			<div class="togglearea">
-				<span class="brand">
-					<a class="navbar-brand" href="#"><span id="typed"></span></a>
+				<span class="sp-brand">
+					<div class="brand">HomeCook<span class="typed-cursor typed-cursor--blink">|</span></div>
 				</span>
 				<span class="menu">
 					<label for="toggle">
@@ -43,10 +38,25 @@
 			</div>
 			<input type="checkbox" id="toggle">
 			<div class="navbar">
-				<a href="#">Home</a>
-				<a href="#">Sell</a>
-				<a href="#">Buy</a>
-				<a href="#">About</a>
+				<div>
+					
+					<a href="#">Home</a>
+					<a href="#">Sell</a>
+					<a href="#">Buy</a>
+					<a href="#">About</a>
+				</div>	
+					<div class="brand">HomeCook<span class="typed-cursor typed-cursor--blink">|</span></div>
+
+					<div class="searchBox">	
+					 <form class="form-inline my-2 my-lg-0">
+					    
+					      <input  type="search" placeholder="Search" aria-label="Search">
+					      <button class="btn searchButton" type="submit">
+							<img src="https://img.icons8.com/ios/50/000000/search-filled.png">
+					      </button>
+					    
+				    </form>
+				    </div> 
 			</div>
 		</nav>
 
