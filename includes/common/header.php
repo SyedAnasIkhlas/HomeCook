@@ -28,7 +28,7 @@
 
 			<div class="togglearea">
 				<span class="sp-brand">
-					<div class="brand">HomeCook<span class="typed-cursor typed-cursor--blink">|</span></div>
+					<div class="brand"><a href="../homecook/index.php">HomeCook</a><span class="typed-cursor typed-cursor--blink">|</span></div>
 				</span>
 				<span class="menu">
 					<label for="toggle">
@@ -38,17 +38,30 @@
 			</div>
 			<input type="checkbox" id="toggle">
 			<div class="navbar">
-				<div>
+				<div  class="nav_list">
 					
 					<a href="#">Home</a>
 					<a href="#">Sell</a>
 					<a href="#">Buy</a>
 					<a href="#">About</a>
+
+					<div class="mobile_serach">
+						<form class="form-inline my-2 my-lg-0" action="../homecook/search.php" method="get">
+					    
+					      <input  type="search" placeholder="Search" aria-label="Search">
+					      <button class="btn searchButton" type="submit">
+							<img src="https://img.icons8.com/ios/50/000000/search-filled.png">
+					      </button>
+					    
+				    </form>
+
+					</div>
+
 				</div>	
-					<div class="brand">HomeCook<span class="typed-cursor typed-cursor--blink">|</span></div>
+					<div class="brand"><a  href="../homecook/index.php" class="no_style">HomeCook</a><span class="typed-cursor typed-cursor--blink">|</span></div>
 
 					<div class="searchBox">	
-					 <form class="form-inline my-2 my-lg-0">
+					 <form class="form-inline my-2 my-lg-0" action="../homecook/search.php" method="get">
 					    
 					      <input  type="search" placeholder="Search" aria-label="Search">
 					      <button class="btn searchButton" type="submit">
