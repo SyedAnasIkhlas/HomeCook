@@ -39,11 +39,6 @@
 			<input type="checkbox" id="toggle">
 			<div class="navbar">
 				<div  class="nav_list">
-					
-					<a href="#">Home</a>
-					<a href="#">Sell</a>
-					<a href="#">Buy</a>
-					<a href="#">About</a>
 
 					<div class="mobile_serach">
 						<form class="form-inline my-2 my-lg-0" action="../homecook/search.php" method="get">
@@ -53,9 +48,27 @@
 							<img src="https://img.icons8.com/ios/50/000000/search-filled.png">
 					      </button>
 					    
-				    </form>
+				   	 	</form>
 
 					</div>
+					
+					<a href="#">Home</a>
+					<a href="#">Sell</a>
+					<a href="#">Buy</a>
+					<a href="#">About</a>
+					<span class="dropdown">
+						<span class="dropdown-button">
+							<a href="#">More</a>
+						</span>
+						<ul>
+							<li>hello</li>
+							<li>hello</li>
+							<li>bye</li>
+						</ul>
+
+					</span>
+					
+					
 
 				</div>	
 					<div class="brand"><a  href="../homecook/index.php" class="no_style">HomeCook</a><span class="typed-cursor typed-cursor--blink">|</span></div>

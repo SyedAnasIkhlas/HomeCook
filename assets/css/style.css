@@ -24,8 +24,10 @@ body
 .navbar
 {
     background: #FF9E00;
-	display:flex;
-	justify-content: space-between;
+    display:flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
 }
 
 .navbar a:not(.no_style)
@@ -46,6 +48,7 @@ body
 
 #toggle
 {
+
 	display: none;
 }
 
@@ -70,6 +73,7 @@ body
 	align-items: center;
 	border-radius: 5px;
 	border: 1px black solid;
+	
 }
 
 .togglearea label span
@@ -284,6 +288,63 @@ body
 	margin-left: 100px;
 }
 
+.nav_list
+{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.dropdown
+{
+	position: fixed;
+    top: 21px;
+    left: 380px;
+}
+
+.dropdown-button
+{
+	padding: 10px;
+}
+
+.dropdown-button a
+{
+	color:#fff;
+	text-decoration: none;
+}
+
+.dropdown ul
+{
+	list-style-type: none;
+	margin-top:24px;
+}
+
+.dropdown ul li
+{
+	padding: 10px 5px;
+	display: none;
+	border:1px solid #000;
+	margin-top:1px;
+	opacity: 0;
+}
+
+.dropdown:hover li
+{
+	animation: load 1s forwards;
+	display: block;
+	color: black;
+	background: #FF9E00;
+	color:white;
+}
+
+.dropdown li:hover
+{
+	background-color:white;
+	color:black;
+	border:1px solid black;
+	cursor:pointer;
+}
+
 
 
 /*KeyFrames*/
@@ -298,6 +359,76 @@ body
 	{
 		width: 8ch;
 	}
+}
+
+/*KeyFrame for dropdown*/
+@keyframes load
+{
+	0%
+	{
+		transform:translateX(25px);
+	}
+
+	100%
+	{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+.dropdown li:first-child
+{
+	animation-delay: 0s;
+}
+
+.dropdown li:nth-child(2)
+{
+	animation-delay: 0.5s;
+}
+
+.dropdown li:last-child
+{
+	animation-delay: 1s;
+}
+
+/*keyframe for mobile menu*/
+@keyframes openMenu
+{
+	0%
+	{
+		transform:translateX(-25px);
+	}
+
+	100%
+	{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+@keyframes closeMenu
+{
+	0%
+	{
+		opacity: 1;
+		transform:translateY(0px);
+	}
+
+	100%
+	{
+		
+		transform: translateY(25px);
+	}
+}
+
+.navbar:first-child
+{
+	animation-delay: 0s;
+}
+
+.navbar:nth-child(2)
+{
+	animation-delay: 1s;
 }
 
 /*media querey*/
@@ -338,6 +469,8 @@ body
 	#toggle:checked + .navbar 
 	{
 		display: flex;
+		animation:openMenu 1s forwards;
+
 
 	}
 
@@ -359,12 +492,60 @@ body
 		background-color:#FF9E00;
 		border-radius:2px;
 		border:1px solid #000;
+		width:425px;
+		margin-bottom:2px;
+		animation:openMenu 0s forwards;
+	}
+	.navbar .nav_list a:first-child
+	{
+		animation:openMenu 0.5s forwards;
+	}
+
+	.navbar .nav_list a:nth-child(2)
+	{
+		animation:openMenu 1s forwards;
+	}
+
+	.navbar .nav_list a:nth-child(3)
+	{
+		animation:openMenu 1.5s forwards;
+	}
+
+	.navbar .nav_list a:last-child
+	{
+		animation:openMenu 2.0s forwards;
 	}
 
 	.searchBox
 	{
 		display: none;
+	}
+
+	.dropdown 
+	{
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+
+		width:75%;
+		margin-left:-310px;
+		margin-top:277px;
+
+	}
+
+	.dropdown .dropdown-button
+	{
+		flex:auto;
+		width:100%;
+		height:60px;
+		padding-left:170px;
+		padding-top:18px;
 		
+	}
+
+	.dropdown ul
+	{
+		margin-top:0px;
 	}
 	
 }
