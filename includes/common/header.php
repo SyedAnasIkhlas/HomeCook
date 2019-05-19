@@ -28,7 +28,7 @@
 
 			<div class="togglearea">
 				<span class="sp-brand">
-					<div class="brand"><a href="../homecook/index.php">HomeCook</a><span class="typed-cursor typed-cursor--blink">|</span></div>
+					<div class="mobile-brand"><a href="../homecook/index.php">HomeCook</a><span class="typed-cursor typed-cursor--blink">|</span></div>
 				</span>
 				<span class="menu">
 					<label for="toggle">

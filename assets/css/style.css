@@ -246,7 +246,7 @@ body
 	color: black;
 }
 
-.sp-brand{
+.mobile-brand{
 	animation: type 3s steps(8);
 	overflow:hidden;
 	white-space: nowrap;
@@ -255,6 +255,18 @@ body
     font-weight: bold;
     cursor: pointer;
     color: black;
+}
+
+.mobile-brand a
+{
+	color:black;
+	margin-left:8px;
+}
+
+.mobile-brand a:hover
+{
+	color:#fff;
+	text-decoration:none;
 }
 
 .brand a:hover
@@ -292,7 +304,7 @@ body
 
 /*for nav bar*/
 
-@media screen and (max-width: 700px) 
+@media screen and (max-width: 900px) 
 {
 	.navbar .nav_list
 	{
@@ -309,18 +321,18 @@ body
 
 	.navbar .nav_list a
 	{
-		color:#000;
+		color:#fff;
    		background: #FF9E00;
 		margin-bottom:2px;
 		width:70vh;
-		border-radius:5px;
+		border-radius:2px;
 		border:1px solid #000;
 	}
 
 	.navbar .nav_list a:hover
 	{
-		color: #FFF;
-		background: #FFD700;
+		color: #000;
+		background: #white;
 	}
 
 	#toggle:checked + .navbar 
@@ -340,18 +352,56 @@ body
 	display: none;
 	}
 
-	.searchBox
-	{
-		display: none;
-	}
-
 	.mobile_serach
 	{
 		display:flex;
 		justify-content:center;
 		background-color:#FF9E00;
-		border-radius:5px;
+		border-radius:2px;
 		border:1px solid #000;
+	}
+
+	.searchBox
+	{
+		display: none;
+		
 	}
 	
 }
+
+@media screen and (max-width:1020px)
+{
+	.brand
+	{
+		position:relative;
+		left:3px;
+
+	}
+}
+
+@media screen and (max-width:991px)
+{
+	.searchBox
+	{
+		height:50px;
+
+		align-items:center;
+	}
+}
+
+@media screen and (max-width:900px)
+{
+	.brand
+	{
+		position:relative;
+		left:1px;
+		font-size:14px;
+	}
+
+
+	.searchBox:hover input
+	{
+		width:150px;
+	}
+}
+
