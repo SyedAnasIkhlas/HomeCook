@@ -4,6 +4,10 @@
 	padding: 0px;
 	box-sizing: border-box;
 }
+main
+{
+	padding-top:80px;
+}
 
 body
 {
@@ -16,6 +20,20 @@ body
 {
 	background: none;
 	text-decoration: none;
+	list-style-type:none;
+
+}
+
+.content
+{
+	display:flex;
+	box-sizing:border-box;
+	padding-left:30px;
+	padding-right:30px;
+	padding-top:20px;
+	padding-bottom:20px;
+	height:auto;
+	width:100%;
 
 }
 
@@ -345,6 +363,78 @@ body
 	cursor:pointer;
 }
 
+/*upload page*/
+
+.uploadForm
+{
+	width:100%;
+	height:auto;
+	padding:15px;
+	display:flex;
+	flex-direction:column;
+}
+
+.imageUploadBox
+{
+	width:190px;
+	height:190px;
+	border:3px solid black;
+	border-radius:5px;
+	cursor:pointer;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.imageUploadBox span
+{
+	font-size:48px;
+	font-weight:bolder;
+}
+
+.inputFields
+	{
+		width:70%;
+		height:100%;
+		padding:15px;
+		margin-left:240px;
+
+	}
+
+	.inputFields input
+	{
+		width:100%;
+		line-height:32px;
+		border-radius:2px;
+		border:none;
+		padding:2px;
+		box-sizing:border-box;
+		border:1px solid #eee;
+	}
+
+	.inputFields textarea
+	{
+		box-sizing:border-box;
+		margin:5px 0;
+		width:100%;
+		resize:none;
+		border-radius:5px;
+		padding:5px;
+		border:none;
+		border:1px solid #eee;
+
+	}
+
+	.inputFields select
+	{
+		width:50%;
+		margin-bottom:10px;
+		border:.5px solid #eee;
+		border-radius:5px;
+		padding:5px;
+	}
+
+
 
 
 /*KeyFrames*/
@@ -430,6 +520,15 @@ body
 {
 	animation-delay: 1s;
 }
+
+.language
+{
+	width: 10vh;
+	height: 20px;
+	background-color: black;
+}
+
+
 
 /*media querey*/
 
@@ -547,6 +646,11 @@ body
 	{
 		margin-top:0px;
 	}
+
+	main
+	{
+		padding-top:5px;
+	}
 	
 }
 
@@ -583,6 +687,52 @@ body
 	.searchBox:hover input
 	{
 		width:150px;
+	}
+}
+
+/* for upload page */
+@media screen and (max-width:900px)
+{
+	.uploadForm
+	{
+		display:flex;
+		justify-content:center;
+		flex-direction:row;
+
+
+	}
+
+	.imageUploadBox
+	{
+		width:190px;
+		height:190px;
+		margin:auto;
+	}
+
+	.inputFields
+	{
+	margin:0;
+	width:390px;
+	}
+
+	.inputFields textarea
+	{
+		box-sizing:border-box;
+		margin:5px 0;
+		width:360px;
+		resize:none;
+		border-radius:5px;
+		padding:5px;
+
+	}
+
+	.inputFields select
+	{
+		width:100%;
+		margin-bottom:10px;
+		border:.5px solid #eee;
+		border-radius:5px;
+		padding:5px;
 	}
 }
 

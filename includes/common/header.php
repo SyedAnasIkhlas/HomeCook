@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/SyedAnasIkhlas/shortcut/master/shortcut.css">
 		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/shortcut.css">
 
 		
 
@@ -28,7 +29,7 @@
 
 			<div class="togglearea">
 				<span class="sp-brand">
-					<div class="mobile-brand"><a href="../homecook/index.php">HomeCook</a><span class="typed-cursor typed-cursor--blink">|</span></div>
+					<div class="mobile-brand"><a href="../homecook/index">HomeCook</a><span class="typed-cursor typed-cursor--blink">|</span></div>
 				</span>
 				<span class="menu">
 					<label for="toggle">
@@ -41,7 +42,7 @@
 				<div  class="nav_list">
 
 					<div class="mobile_serach">
-						<form class="form-inline my-2 my-lg-0" action="../homecook/search.php" method="get">
+						<form class="form-inline my-2 my-lg-0" action="../homecook/search" method="get">
 					    
 					      <input  type="search" placeholder="Search" aria-label="Search">
 					      <button class="btn searchButton" type="submit">
@@ -71,10 +72,10 @@
 					
 
 				</div>	
-					<div class="brand"><a  href="../homecook/index.php" class="no_style">HomeCook</a><span class="typed-cursor typed-cursor--blink">|</span></div>
+					<div class="brand"><a  href="../homecook/index" class="no_style">HomeCook</a><span class="typed-cursor typed-cursor--blink">|</span></div>
 
 					<div class="searchBox">	
-					 <form class="form-inline my-2 my-lg-0" action="../homecook/search.php" method="get">
+					 <form class="form-inline my-2 my-lg-0" action="../homecook/search" method="get">
 					    
 					      <input  type="search" placeholder="Search" aria-label="Search">
 					      <button class="btn searchButton" type="submit">
@@ -86,28 +87,11 @@
 			</div>
 		</nav>
 
-		<!-- <div id="typed-strings">
-			<p>HomeCook</p>
-			<p>HomeCook</p>
-		</div>
+		<span class="language">
+			
+		</span>
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-		  <a class="navbar-brand" href="#"><span id="typed"></span> </a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
+		<main>
+			<section>
 
-		  <img src="https://img.icons8.com/color/50/000000/chili-pepper.png" class="headerLogo">
-
-		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		    <form class="form-inline my-2 my-lg-0">
-			    <span class="searchBox">	
-			      <input  type="search" placeholder="Search" aria-label="Search">
-			      <button class="btn searchButton" type="submit">
-					<img src="https://img.icons8.com/ios/50/000000/search-filled.png">
-			      </button>
-			    </span> 
-		    </form>
-		  </div>
-
-		</nav> -->
+		<div class="content">

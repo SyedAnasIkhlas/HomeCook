@@ -1,19 +1,12 @@
-<script>
-	var typed = new Typed('#typed', 
-	{
-	    stringsElement: '#typed-strings',
-	    typeSpeed: 200,
-	});
+				</div>
 
-	var brand = new Typed('#brad', 
-	{
-	    stringsElement: '#typed-strings',
-	    typeSpeed: 200,
-	});
-</script>
+			</section>
 
-</body>
-	</html>	
+		</main>
+
+	</body>
+	
+</html>	
 
 
 
