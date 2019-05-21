@@ -1,3 +1,4 @@
+/*Default tags*/
 *
 {
 	margin: 0px;
@@ -13,6 +14,28 @@ body
 {
 	font-family: 'Poppins', sans-serif;
 }
+
+input
+{
+	line-height:32px;
+	border-radius:2px;
+	border:none;
+	padding:5px;
+	box-sizing:border-box;
+	border:1px solid #eee;
+}
+
+textarea
+{
+	box-sizing:border-box;
+	margin:5px 0;
+	resize:none;
+	border-radius:5px;
+	padding:5px;
+	border:none;
+	border:1px solid #eee;
+}
+
 
 /*universal style*/
 
@@ -374,6 +397,11 @@ body
 	flex-direction:column;
 }
 
+.uploadForm input[type="file"]
+{
+	display: none;
+}
+
 .imageUploadBox
 {
 	width:190px;
@@ -404,25 +432,11 @@ body
 	.inputFields input
 	{
 		width:100%;
-		line-height:32px;
-		border-radius:2px;
-		border:none;
-		padding:2px;
-		box-sizing:border-box;
-		border:1px solid #eee;
 	}
 
 	.inputFields textarea
 	{
-		box-sizing:border-box;
-		margin:5px 0;
-		width:100%;
-		resize:none;
-		border-radius:5px;
-		padding:5px;
-		border:none;
-		border:1px solid #eee;
-
+		width: 100%;
 	}
 
 	.inputFields select

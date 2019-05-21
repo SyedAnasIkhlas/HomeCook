@@ -1,7 +1,7 @@
 <?php 
 	class InputField
 	{
-		public static function createInputField($type, $placeholder, $name)
+		public static function createInputField($type, $placeholder, $name, $value, $required)
 		{
 			if($placeholder == null)
 			{
@@ -10,6 +10,24 @@
 			else
 			{
 				$placeholder = $placeholder; 
+			}
+
+			if($required == null)
+			{
+				$required = "";
+			}
+			else
+			{
+				$required = $required; 
+			}
+
+			if($value == null)
+			{
+				$value = "";
+			}
+			else
+			{
+				$value = $value; 
 			}
 
 			if($name == null)
@@ -21,10 +39,10 @@
 				$name = $name; 
 			}
 
-			return "<input type='$type' placeholder='$placeholder' name='$name'>";
+			return "<input type='$type' placeholder='$placeholder' value='$value' name='$name' $required>";
 		}
 
-		public static function createTextarea($text, $placeholder, $name,  $rows, $cols)
+		public static function createTextarea($text, $placeholder, $name,  $rows, $cols, $required)
 		{
 			if($rows == null)
 			{
@@ -34,6 +52,15 @@
 			if( $cols == null)
 			{
 				$cols = 60;
+			}
+
+			if ($required == null) 
+			{
+				$required = "";
+			}
+			else
+			{
+				$required = $required;
 			}
 
 			if ($name == null) 
@@ -46,7 +73,7 @@
 				$text = $text;
 			}
 
-			return"<textarea name='$name' placeholder='$placeholder' rows='$rows' cols='$cols'>$text</textarea>";
+			return"<textarea name='$name' placeholder='$placeholder' rows='$rows' cols='$cols' $required>$text</textarea>";
 		}
 
 
