@@ -3,7 +3,11 @@ class UploadImage
 {
 	public static function imageUploader($name, $id)
 	{
-
+		$span_id =  "select_image";
+		$numbers = array(1, 2, 3,4,5);
+ 
+		$span_id = $span_id.$numbers[0];
+		
 		if ($name == null) 
 		{
 			$name = "image";
@@ -15,7 +19,11 @@ class UploadImage
 
 		if ($id == null) 
 		{
-			$id = 
+			$id = "labelId";
+		}
+		else
+		{
+			$id = $id;
 		}
 
 		return "
@@ -24,19 +32,20 @@ class UploadImage
 
 			<label for='$id'>
 				<div class='imageUploadBox'>	
-					<span>
+					<span class='plus_icon'>
 						&#43;
 					</span>	
 				</div>
-				<span id='select_image'>
+				<span id='$span_id'>
 					No image selected
 				</span>
 			</label>
 		";
 	}
 
-	public static function imageUploaderSm($name, $id)
+	public static function imageUploaderSm($name, $id, $span_id)
 	{
+
 
 		if ($name == null) 
 		{
@@ -49,24 +58,31 @@ class UploadImage
 
 		if ($id == null) 
 		{
-			$id = 
+			$id = "labelId";
+		}
+		else
+		{
+			$id = $id;
 		}
 
-		return "
+			return "
 			
 			<input type='file' name='$name' id='$id' multiple='' accept='image/*'>
 
 			<label for='$id'>
 				<div class='imageUploadBoxSm'>	
-					<span>
+					<span class='plus_icon_sm'>
 						&#43;
 					</span>	
 				</div>
-				<span id='select_image'>
+				<span id='$span_id'>
 					No image selected
 				</span>
 			</label>
 		";
+		
+
+		
 	}
 
 

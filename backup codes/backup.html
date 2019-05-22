@@ -12,6 +12,26 @@
 		</div>
 
 
+var numbers = [1,2,3];
+ 	var arrayLength = numbers.length;
+
+ 	for (var i = 0; i < arrayLength; i++) 
+ 	{
+ 		const uploadFileButton = document.getElementById("uploadFile");
+		const customText = document.getElementById(i);
+
+		uploadFileButton.addEventListener("change", function() {
+		  if (uploadFileButton.value) {
+		    customText.innerHTML = uploadFileButton.value.match(
+		      /[\/\\]([\w\d\s\.\-\(\)]+)$/
+		    )[1];
+		  } else {
+		    customText.innerHTML = "No image selected.";
+		  }
+		});
+ 	}
+
+
 		<!-- <div id="typed-strings">
 			<p>HomeCook</p>
 			<p>HomeCook</p>
@@ -51,3 +71,171 @@
 	    typeSpeed: 200,
 	});
 </script>
+
+<?php 
+class UploadImage
+{
+	public static function imageUploader($name, $id)
+	{
+		$span_id =  "select_image";
+		$numbers = array(1, 2, 3,4,5);
+ 
+		$span_id = $span_id.$numbers[0];
+		
+		if ($name == null) 
+		{
+			$name = "image";
+		}
+		else
+		{
+			$name = $name;
+		}
+
+		if ($id == null) 
+		{
+			$id = "labelId";
+		}
+		else
+		{
+			$id = $id;
+		}
+
+		return "
+			
+			<input type='file' name='$name' id='$id' multiple='' accept='image/*'>
+
+			<label for='$id'>
+				<div class='imageUploadBox'>	
+					<span class='plus_icon'>
+						&#43;
+					</span>	
+				</div>
+				<span id='$span_id'>
+					No image selected
+				</span>
+			</label>
+		";
+	}
+
+	public static function imageUploaderSm($name, $id)
+	{
+		$numbers = array(1, 2, 3,4,5);
+		$span_id =  "select_image";
+
+		if (!strpos(2, $span_id)) 
+		{
+			$span_id = $span_id.$numbers[1];
+		}
+		else
+		{
+			$span_id = $span_id.$numbers[2];
+		}
+
+		if ($name == null) 
+		{
+			$name = "image";
+		}
+		else
+		{
+			$name = $name;
+		}
+
+		if ($id == null) 
+		{
+			$id = "labelId";
+		}
+		else
+		{
+			$id = $id;
+		}
+
+
+		return "
+			
+			<input type='file' name='$name' id='$id' multiple='' accept='image/*'>
+
+			<label for='$id'>
+				<div class='imageUploadBoxSm'>	
+					<span class='plus_icon_sm'>
+						&#43;
+					</span>	
+				</div>
+				<span id='$span_id'>
+					No image selected
+				</span>
+			</label>
+		";
+	}
+
+
+}
+
+ ?>
+
+ <script>
+
+ 	
+ 	
+ </script>
+
+
+ <?php 
+	require_once 'includes/classes/InputFields.php';
+	require_once 'includes/common/header.php';
+	require_once 'includes/classes/UploadImage.php';
+
+	$imageBox = UploadImage::imageUploader("uploadFile[]", "uploadFile");
+	$imageBoxSm = UploadImage::imageUploaderSm("uploadFile[]", "uploadFile");
+	$imageBoxSm2 = UploadImage::imageUploaderSm("uploadFile[]", "uploadFile");
+	$titleField = InputField::createInputField("text", "Title", "title", null, "required");
+	$descriptionField = InputField::createTextarea(null, "Description", "description", null, null, "required");
+	$submitButton = InputField::createInputField("submit", null, "upload", "Upload", null);
+?>
+	
+	<div class="uploadForm">
+		<form action="uploading" method="post" enctype="multipart/form-data">
+			<div>
+				<?php 
+					echo $imageBox; 
+					echo $imageBoxSm;
+					echo $imageBoxSm2;
+				?>
+
+			</div>
+
+			<div class="inputFields">
+				<?php 
+					echo $titleField;
+					echo $descriptionField;
+				 ?>
+
+				 <select name="stock" class="stockControll">
+				 	<option value="0">In Stock</option>
+				 	<option value="1">out Of Stock</option>
+				 </select><br>
+
+				 <select name="stock" class="country">
+				 	<option value="0">In Stock</option>
+				 	<option value="1">out Of Stock</option>
+				 </select><br>
+
+				  <select name="stock" class="city">
+				 	<option value="0">In Stock</option>
+				 	<option value="1">out Of Stock</option>
+				 </select><br>
+
+				 <?php echo $submitButton; ?>
+
+
+
+
+
+			</div>
+
+		</form>
+	</div>	
+	
+
+ <?php 
+	require_once 'includes/common/footer.php';
+  ?>

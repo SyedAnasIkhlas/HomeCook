@@ -406,7 +406,7 @@ textarea
 {
 	width:190px;
 	height:190px;
-	border:3px solid black;
+	border:2px solid gray;
 	border-radius:5px;
 	cursor:pointer;
 	display:flex;
@@ -414,10 +414,40 @@ textarea
 	align-items:center;
 }
 
-.imageUploadBox span
+.imageUploadBox .plus_icon
 {
 	font-size:48px;
 	font-weight:bolder;
+}
+
+#select_image
+{
+	font-size:15px;
+	margin-left:17px;
+}
+
+.imageUploadBoxSm
+{
+	width:140px;
+	height:140px;
+	border:2px solid gray;
+	border-radius:5px;
+	cursor:pointer;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.imageUploadBoxSm .plus_icon_sm
+{
+	font-size:30px;
+	font-weight:bolder;
+}
+
+#select_image_sm
+{
+	font-size:13px;
+	margin-left:7px;
 }
 
 .inputFields
@@ -718,15 +748,22 @@ textarea
 
 	.imageUploadBox
 	{
-		width:190px;
-		height:190px;
+		width:130px;
+		height:130px;
+		margin:auto;
+	}
+
+	.imageUploadBoxSm
+	{
+		width:120px;
+		height:120px;
 		margin:auto;
 	}
 
 	.inputFields
 	{
-	margin:0;
-	width:390px;
+		margin:0;
+		width:390px;
 	}
 
 	.inputFields textarea
@@ -747,6 +784,35 @@ textarea
 		border:.5px solid #eee;
 		border-radius:5px;
 		padding:5px;
+	}
+}
+
+@media screen and (max-width:530px)
+{
+	.imageUploadBox
+	{
+		width:120px;
+		height:120px;
+		margin:auto;
+	}
+
+	.imageUploadBoxSm
+	{
+		width:110px;
+		height:110px;
+		margin:auto;
+	}
+	#select_image_sm
+	{
+		font-size:10px;
+		font-weight:bold;
+	}
+
+	#select_image
+	{
+		font-size:13px;
+		font-weight:bold;
+		margin-right:13px;
 	}
 }
 
