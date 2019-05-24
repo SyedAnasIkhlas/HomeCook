@@ -1,4 +1,6 @@
 <?php 
+	require_once 'includes/connection/config.php';
+
 class UploadImage
 {
 	public static function imageUploader($name, $id)
@@ -26,6 +28,9 @@ class UploadImage
 			$id = $id;
 		}
 
+		$image_name = "No image selected";
+		
+
 		return "
 			
 			<input type='file' name='$name' id='$id' multiple='' accept='image/*'>
@@ -37,7 +42,7 @@ class UploadImage
 					</span>	
 				</div>
 				<span id='$span_id'>
-					No image selected
+					$image_name
 				</span>
 			</label>
 		";

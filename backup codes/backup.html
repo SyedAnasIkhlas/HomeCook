@@ -10,7 +10,7 @@
 			<a href="#">Buy</a>
 			<a href="#">About</a>
 		</div>
-
+https://www.youtube.com/watch?v=T0Q0kEyEK_k
 
 var numbers = [1,2,3];
  	var arrayLength = numbers.length;
@@ -239,3 +239,86 @@ class UploadImage
  <?php 
 	require_once 'includes/common/footer.php';
   ?>
+
+
+  // 
+// getCountryId
+// 
+
+$('#country').change(function()
+{
+  var country_name = $(this).val();
+  $.ajax
+  ({
+    url:"includes/classes/GetCityFromCountry.php",
+    method:"POST",
+    data:{country_name:country_name},
+    dataType:"text",
+    success:function(data)
+    {
+      alert(country_id);
+
+    }
+
+  })
+})
+
+
+
+
+
+
+<?php 
+	class City
+	{
+
+		private $con, $country_id;
+
+		public function __construct($con, $country_id)
+		{
+			$this->con = $con;
+			$this->country_id = $country_id;
+		}
+
+		public function city()
+		{
+			if ($this->country_id == null) 
+			{
+				return
+					"
+					<select name='city' class='city'>
+					 	<option value='0'>Select A Country</option>
+				 	</select><br>
+					";
+			}
+
+			else
+			{
+				$query = $this->con->prepare("SELECT * FROM city WHERE country_id = :country_id");
+				$query->bindParam(":country_id", $this->country_id);
+				$query->execute();
+
+				$html = "
+					<select name='city' class='city'>
+					<option value=''selected disabled>Select City</option>
+				";
+
+				while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
+				{
+					$city_id = $row['id'];
+					$city = $row['city'];
+					$html .=
+					" 	
+				 		<option value='$city_id'>$city</option>
+					";
+				}
+
+				$html .= "</select><br>";
+
+				return $html;
+
+			}
+		}
+	}
+
+ ?>

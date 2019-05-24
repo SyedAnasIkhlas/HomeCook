@@ -5,7 +5,7 @@
 
 	try {
 		
-		$con = new PDO("mysql:dbname=VideoTube;host=;localhost","root","");
+		$con = new PDO("mysql:dbname=homecook;host=;localhost","root","");
 		$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
 	} catch (PDOException $e) {

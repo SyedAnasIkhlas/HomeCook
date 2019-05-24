@@ -37,3 +37,5 @@ uploadFileButton3.addEventListener("change", function() {
     customText3.innerHTML = "No image selected.";
   }
 });
+
+
