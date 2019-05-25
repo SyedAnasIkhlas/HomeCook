@@ -488,13 +488,22 @@ textarea
 	{
 		width:50%;
 		margin-bottom:10px;
-		border:.5px solid #eee;
+		border: 1px solid #eee;
 		border-radius:5px;
 		padding:5px;
 	}
+.inline_content
+{
+	display:flex;
+	flex-direction:row;
+}
 
 
+.modal_image img
+{
+	width:29px;
 
+}
 
 /*KeyFrames*/
 @keyframes type
@@ -796,7 +805,7 @@ textarea
 	{
 		width:100%;
 		margin-bottom:10px;
-		border:.5px solid #eee;
+		border: 1px solid #eee;
 		border-radius:5px;
 		padding:5px;
 	}
