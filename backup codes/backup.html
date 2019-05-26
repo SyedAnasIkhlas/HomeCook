@@ -414,3 +414,73 @@ $('#country').change(function()
 
 	}
  ?>
+
+
+ //$country = InputField::createInputField("text", "Country Name", "country", null, null, null, null);
+
+	$image = "<img src='https://img.icons8.com/ios/50/000000/plus-2-math-filled.png'>";
+	$title_country = "Add new country";
+	$body_country = "";
+	$save_country = "Add";
+	$add_country = Modal::createModal(null, $image, $title_country, "", $save_country, "country", "text", "add", "addCountry()");
+
+   
+   //Add new city
+   
+	// $citys = InputField::createInputField("text", "City Name", "city", null, null, null, null);
+
+
+	$title_city = "Add new city";
+	$body_city = "";
+	$save_city = "Add";
+
+	$add_city = Modal::createModal(null, $image, $title_city, $body_city, $save_city, "city","text", "add", "addCity()"); 
+
+
+
+	<?php 
+class Countries
+{
+	private $con;
+	public $country;
+
+	public function __construct($con)
+	{
+		$this->con = $con;
+
+	}
+
+	public function countries()
+	{
+		$query = $this->con->prepare("SELECT * FROM countries");
+		$query->execute();
+
+		$html = "
+		<select name='country' class='country' id='country' >
+		<option value=''selected disabled>Select Country</option>
+
+		";
+
+		while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
+		{
+			$country_id = $row['id'];
+			$country_name = $row['country'];
+			$html .= "<option value='$country_id'>$country_name</option>";
+		}
+
+		$html .= "</select><br>";
+
+		return $html;
+	}
+
+	// public static function country_id()
+	// {
+	// 	$query = $this->con->prepare("SELECT id FROM countries WHERE country = :country_name");
+	// 	return $query->execute();
+	// }	
+
+
+
+
+}
+ ?>

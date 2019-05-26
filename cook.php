@@ -25,29 +25,26 @@
 	$get_countries = new Countries($con);
 	$countries = $get_countries->countries();
 
-	//Modal
-	//Add country Model
+
 	//
-	
-	$country = InputField::createInputField("text", "Country Name", "country", null, null, null, null);
+	//Add new country from modal
+	//
 
 	$image = "<img src='https://img.icons8.com/ios/50/000000/plus-2-math-filled.png'>";
-	$title_country = "Add new country";
-	$body_country = $country;
-	$save_country = "Add";
-	$add_country = Modal::createModal(null, $image, $title_country, $body_country, $save_country, "country", "submit", "add");
 
-   
-   //Add new city
-   
-	// $citys = InputField::createInputField("text", "City Name", "city", null, null, null, null);
+	$country_body = InputField::createInputField("text", "Country Name", "new_country", null, null, null,"addCountry")
+	."<span class='red'></span>
+	  <span class='green'></span>";
 
 
-	$title_city = "Add new city";
-	$body_city = "";
-	$save_city = "Add";
+	$add_new_country = Modal::createModal(null, $image, "New Country", $country_body,"Add","data_target", "name","newCountry()");
 
-	$add_city = Modal::createModal(null, $image, $title_city, $body_city, $save_city, "city","submit", "add"); 
+
+	//
+	//Add new city Modal
+	//
+	
+	
 	?>
 	
 	<div class="uploadForm">
@@ -74,11 +71,12 @@
 				 	<option value="1">Cooking</option>
 				 </select><br>
 				
-				<span class="inline_content"> 
+				<span class="inline_content updateCountry"> 
 				 	<?php 
+
 				 		echo $countries;
-				 		echo $add_country;
-				 		// echo $city;
+				 		echo $add_new_country;
+				 		
 				 	 ?>
 				</span> 	 
 				<!-- Displaying city name from country -->
@@ -87,7 +85,9 @@
 					<select name='city' class='city' id="city">
 						<option value=''selected disabled>Select City</option>
 					</select>
-					<?php echo $add_city; ?>
+					<?php 
+					// echo $add_city;
+					 ?>
 				</span>	
 				
 				 

@@ -9,16 +9,16 @@
 		// }
 
 		public static function createModal($buttonText, $imageSrc, $title, $body, 
-											$buttonDone,$data_target, $type, $name)
+											$buttonDone,$data_target, $name,$onclick)
 		{ 
 
-			if ($type == null) 
+			if ($onclick == null) 
 			{
-				$type = "text";
+				$onclick = "";
 			}
 			else
 			{
-				$type = $type;
+				$onclick = $onclick;
 			}
 
 			if ($name == null) 
@@ -92,7 +92,7 @@
 			      </div>
 			      <div class='modal-footer'>
 			        <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
-			        <button type='$type' class='btn btn-primary' name='$name' >$buttonDone</button>
+			        <button type='button' class='btn btn-primary' name='$name' onclick='$onclick' >$buttonDone</button>
 			      </div>
 			    </div>
 			  </div>

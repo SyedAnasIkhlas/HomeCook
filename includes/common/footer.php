@@ -10,8 +10,11 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 		<script src="../homecook/assets/js/script.js"> </script>
+		<!-- Cook page js -->
 		<!-- Getting country name JS-->
 		<script src="assets/js/GetCityNamesFromCountryId.js"></script>
+		<!-- Add new country and city  js-->
+		<script src="assets/js/AddNew.js"></script>
 
 
 	</body>

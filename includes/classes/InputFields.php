@@ -112,6 +112,35 @@
 			return"<textarea name='$name' placeholder='$placeholder' class='$class' id='$id' rows='$rows' cols='$cols' $required>$text</textarea>";
 		}
 
+		//Implement if required
+		//if ($class == null) 
+		// {
+		// 	$output = "<input type='$type' placeholder='$placeholder'  value='$value' name='$name'  id='$id' $required>";
+		// }
+		// else
+		// {
+		// 	$output = "<input type='$type' placeholder='$placeholder'  value='$value' name='$name' id='$id'$required>";
+		// }
+
+		// if ($id == null) 
+		// {
+		// 	$output = "<input type='$type' placeholder='$placeholder'  value='$value' name='$name'  class='$class' $required>";
+		// }
+		// else
+		// {
+		// 	$output = "<input type='$type' placeholder='$placeholder'  value='$value' name='$name'  class='$class'$required>";
+		// }
+
+		// if ($id == null AND $class == null) 
+		// {
+		// 	$output = "<input type='$type' placeholder='$placeholder'  value='$value' name='$name' $required>";
+		// }
+		// else
+		// {
+		// 	$output = "<input type='$type' placeholder='$placeholder'  value='$value' name='$name' class='$class' id='$id 
+		// 	$required>";
+		// }
+
 
 		
 	}
