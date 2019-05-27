@@ -15,7 +15,7 @@
 		{
 				$output = "";
 			
-				$query = $this->con->prepare("SELECT * FROM city WHERE country_id = :country_id");
+				$query = $this->con->prepare("SELECT * FROM city WHERE country_id = :country_id  ORDER BY city ASC");
 				$query->bindParam(":country_id", $this->country_id);
 				$query->execute();
 

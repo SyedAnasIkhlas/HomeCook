@@ -13,6 +13,8 @@
 		<!-- Cook page js -->
 		<!-- Getting country name JS-->
 		<script src="assets/js/GetCityNamesFromCountryId.js"></script>
+		<!-- country names  js-->
+		<script src="assets/js/countryName.js"></script>
 		<!-- Add new country and city  js-->
 		<script src="assets/js/AddNew.js"></script>
 

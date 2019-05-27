@@ -21,6 +21,24 @@ function newCountry()
 			 $("#addCountry").val();
 			 $("#country").html();
 			 $(".green").html(data);
+
+			 $.ajax({
+  	url: '../homecook/ajax/getCountry.php',
+  	type: 'POST',
+  	dataType: 'text',
+  })
+  .done(function(data) {
+  	console.log("success");
+  	$("#country").html(data)
+  	alert("pass")
+  })
+  .fail(function(data) {
+  	console.log("error");
+  	alert(data)
+  })
+  .always(function() {
+  	console.log("complete");
+  });
 		})
 		.fail(function(data) {
 			console.log("error");
@@ -30,26 +48,6 @@ function newCountry()
 			console.log("complete");
 		});
 
-
-		$.ajax({
-			url: '../homecook/ajax/updateCountry.php',
-			type: 'POST',
-			dataType: 'text',
-			data: {update:'update'},
-		})
-		.done(function(data) {
-			console.log("success");
-			//$("#country").html(data);
-			$(".updateCountry").html(data);
-			 
-		})
-		.fail(function(data) {
-			console.log("error");
-			
-		})
-		.always(function() {
-			console.log("complete");
-		});
 		
 	}
 }

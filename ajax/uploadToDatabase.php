@@ -1,12 +1,12 @@
 <?php 
-	require_once 'includes/connection/config.php';
+	require_once '../includes/connection/config.php';
 	require_once '../includes/classes/Countries.php';
 
 	if (isset($_POST['countryName'])) 
 	{
 		$country_name = $_POST['countryName'];
 
-		$check_query = $con->prepare("SELECT * FROM countries WHERE country = :country_name");
+		$check_query = $con->prepare("SELECT * FROM countries WHERE country = :country_name" );
 		$check_query->bindParam(":country_name",$country_name);
 		$check_query->execute();
 

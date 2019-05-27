@@ -12,14 +12,11 @@ class Countries
 
 	public function countries()
 	{
-		$query = $this->con->prepare("SELECT * FROM countries");
+		$html = "";
+		$query = $this->con->prepare("SELECT * FROM countries ORDER BY country ASC");
 		$query->execute();
 
-		$html = "
-		<select name='country' class='country' id='country'>
-		<option value=''selected disabled>Select Country</option>
-
-		";
+		$html .= "<option value=''selected disabled>Select Country</option>";
 
 		while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
 		{
@@ -28,9 +25,7 @@ class Countries
 			$html .= "<option value='$country_id'>$country_name</option>";
 		}
 
-		$html .= "</select><br>";
-
-		return $html;
+			return $html;
 	}
 
 	// public static function country_id()

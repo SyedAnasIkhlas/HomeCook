@@ -22,8 +22,8 @@
 
 	// database getting countries and city
 	
-	$get_countries = new Countries($con);
-	$countries = $get_countries->countries();
+	// $get_countries = new Countries($con);
+	// $countries = $get_countries->countries();
 
 
 	//
@@ -71,10 +71,14 @@
 				 	<option value="1">Cooking</option>
 				 </select><br>
 				
-				<span class="inline_content updateCountry"> 
-				 	<?php 
+				<span class="inline_content"> 
 
-				 		echo $countries;
+				 <select name="country" class="country" id='country'>
+				 	<option value="" selected disabled>Select Country</option>
+				 </select>
+
+				 	<?php 
+				 		//echo $countries;
 				 		echo $add_new_country;
 				 		
 				 	 ?>
