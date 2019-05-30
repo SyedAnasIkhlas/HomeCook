@@ -8,7 +8,7 @@ $(document).ready(function()
   .done(function(data) {
   	console.log("success");
   	$("#country").html(data)
-  	alert("pass")
+  	
   })
   .fail(function(data) {
   	console.log("error");

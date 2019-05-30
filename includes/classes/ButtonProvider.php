@@ -42,7 +42,7 @@
 
 			return "
 				<button class='$class' id='id' onclick='action'>
-					<img src="$image" alt="">
+					<img src='$image' alt='>
 					<span class='text'>$text</span>
 				</button>	
 

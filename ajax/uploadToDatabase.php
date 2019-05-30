@@ -25,5 +25,29 @@
 		}
 	}
 
+	if (isset($_POST["country_id"])) 
+	{
+		$country_id = $_POST["country_id"];
+		$city_name = $_POST["city_name"];
+
+		$check_query = $con->prepare("SELECT `city` FROM `city` WHERE `city` = :city");
+		$check_query->bindParam(":city",$city_name);
+		$check_query->execute();
+	}
+
+	if ($check_query->rowCount() != 0) 
+		{
+			echo "<span class='red'>City already exists!</span>";
+			exit();
+		}
+		else
+		{
+			$query = $con->prepare("INSERT INTO city (country_id , city) VALUES (:country_id,:city)");
+			$query->bindParam(":country_id",$country_id);
+			$query->bindParam(":city",$city_name);
+			$query->execute();
+			echo "City added";
+		}
+
 
  ?>

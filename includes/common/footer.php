@@ -17,6 +17,8 @@
 		<script src="assets/js/countryName.js"></script>
 		<!-- Add new country and city  js-->
 		<script src="assets/js/AddNew.js"></script>
+		<!-- Check Errors js-->
+		<script src="assets/js/CheckError.js"></script>
 
 
 	</body>

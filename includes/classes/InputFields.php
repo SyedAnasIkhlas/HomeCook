@@ -1,7 +1,7 @@
 <?php 
 	class InputField
 	{
-		public static function createInputField($type, $placeholder, $name, $value, $required, $class, $id)
+		public static function createInputField($type, $placeholder, $name, $value, $required, $class, $id, $onclick)
 		{
 			if($placeholder == null)
 			{
@@ -11,6 +11,16 @@
 			{
 				$placeholder = $placeholder; 
 			}
+
+			if($onclick == null)
+			{
+				$onclick = "";
+			}
+			else
+			{
+				$onclick = $onclick; 
+			}
+
 
 			if($required == null)
 			{
@@ -57,7 +67,7 @@
 				$id = $id;
 			}
 
-			return "<input type='$type' placeholder='$placeholder'  value='$value' name='$name'  class='$class' id='$id' $required>";
+			return "<input type='$type' placeholder='$placeholder'  value='$value' name='$name'  class='$class' id='$id' $required onclick='$onclick'> ";
 		}
 
 		public static function createTextarea($text, $placeholder, $name,  $rows, $cols, $required, $class, $id)
