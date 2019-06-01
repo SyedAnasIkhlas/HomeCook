@@ -31,21 +31,32 @@ class UploadImage
 		$image_name = "No image selected";
 		
 
-		return "
+		// return "
 			
-			<input type='file' name='$name' id='$id' multiple='' accept='image/*'>
+		// 	<input type='file' name='$name' id='$id' multiple='' accept='image/*'>
 
-			<label for='$id'>
-				<div class='imageUploadBox'>	
-					<span class='plus_icon'>
-						&#43;
-					</span>	
-				</div>
-				<span id='$span_id'>
-					$image_name
+		// 	<label for='$id'>
+		// 		<div class='imageUploadBox'>	
+		// 			<span class='plus_icon'>
+		// 				&#43;
+		// 			</span>	
+		// 		</div>
+		// 		<span id='$span_id'>
+		// 			$image_name
+		// 		</span>
+		// 	</label>
+		// ";
+		
+			return"
+			<div class='img_view'>
+				<div class='imageUploadBox'>
+					<img id='$id' class='dish'/>
+				</div><br>
+				<span class='img_selector'>
+					<input type='file' name='$name' multiple='' accept='image/*' onchange='loadFile(event)'>
 				</span>
-			</label>
-		";
+			</div>"
+			;
 	}
 
 	public static function imageUploaderSm($name, $id, $span_id)

@@ -11,7 +11,29 @@
 
 .uploadForm input[type="file"]
 {
-	display: none;
+	/*display: none;*/
+}
+
+.imagesDisplay
+{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	
+}
+
+.img_view
+{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+}
+
+.dish
+{
+	width:100%;
+
 }
 
 .imageUploadBox
@@ -24,6 +46,8 @@
 	display:flex;
 	justify-content:center;
 	align-items:center;
+	padding:5px;
+	overflow:auto;
 }
 
 .imageUploadBox .plus_icon
@@ -126,6 +150,23 @@
 
 	}
 
+	.imagesDisplay
+	{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+
+	}
+
+	.img_view
+	{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+	}
+
 	.imageUploadBox
 	{
 		width:130px;
@@ -169,6 +210,23 @@
 
 @media screen and (max-width:530px)
 {
+	.imagesDisplay
+	{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+
+	}
+
+	.img_view
+	{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+	}
+
 	.imageUploadBox
 	{
 		width:120px;
@@ -204,6 +262,23 @@
 
 @media screen and (max-width:390px)
 {
+	.imagesDisplay
+	{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+
+	}
+
+	.img_view
+	{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+	}
+
 	.imageUploadBox
 	{
 		width:110px;
@@ -242,7 +317,25 @@
 	{
 		width:100px;
 		height:100px;
-		margin-left:25px;	}
+		margin-left:25px;	
+		}
+
+		.imagesDisplay
+	{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+
+	}
+
+	.img_view
+	{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+	}
 
 	.imageUploadBoxSm
 	{
@@ -272,6 +365,23 @@
 
 	@media screen and (max-width:360px)
 {
+	.imagesDisplay
+	{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+
+	}
+
+	.img_view
+	{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+	}
+	
 	.imageUploadBox
 	{
 		width:100px;
@@ -303,12 +413,7 @@
 		font-weight:bold;
 		margin-right:10px;
 	}
-
-	.inputFields
-	{
-		
-	}
-
+	
 	.inputFields input
 	{
 		margin:auto;

@@ -12,9 +12,11 @@
 
 	// input fields
 
-	$imageBox = UploadImage::imageUploader("uploadFile[]", "uploadFile");
-	$imageBoxSm = UploadImage::imageUploaderSm("uploadFile[]", "uploadFile2", "select_image2");
-	$imageBoxSm2 = UploadImage::imageUploaderSm("uploadFile[]", "uploadFile3", "select_image3");
+	$imageBox = UploadImage::imageUploader("uploadFile[]", "dish1");
+	$imageBoxSm = UploadImage::imageUploader("uploadFile[]", "dish2");
+	$imageBoxSm2 = UploadImage::imageUploader("uploadFile[]", "dish3");
+	// $imageBoxSm = UploadImage::imageUploaderSm("uploadFile[]", "uploadFile2", "select_image2");
+	// $imageBoxSm2 = UploadImage::imageUploaderSm("uploadFile[]", "uploadFile3", "select_image3");
 
 	$titleField = InputField::createInputField("text", "Title", "title", null, "required", null, null, null);
 	$quantityField = InputField::createInputField("number", "Quantity", "quantity", null, "required", null, null, null);
@@ -51,7 +53,7 @@
 	
 	<div class="uploadForm">
 		<form action="ajax/cooking" method="post" id="cook" enctype="multipart/form-data">
-			<div>
+			<div class="imagesDisplay">
 				<?php 
 					echo $imageBox; 
 					echo $imageBoxSm;
@@ -67,7 +69,7 @@
 					echo $quantityField;
 				 ?>
 
-				 <select name="stock" class="stockControll" required>
+				 <select name="status" class="stockControll" required>
 				 	<option value="" selected disabled>Status</option>
 				 	<option value="0">Cooked</option>
 				 	<option value="1">Cooking</option>

@@ -5,11 +5,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
 		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
-		<link rel='icon' href='../assets/images/icons/Fav_icon.png'>
+		<link rel='shortcut icon' href='https://img.icons8.com/ios/50/000000/chef-hat.png'>
 		<title>HomeCooks</title>
 	<!--ALL CSS STYLE SHEETS-->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/SyedAnasIkhlas/shortcut/master/shortcut.css">
 		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/style.css">
 		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/header.css">
 		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/uploadPage.css">

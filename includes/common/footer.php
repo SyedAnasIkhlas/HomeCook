@@ -11,6 +11,8 @@
 		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 		<script src="../homecook/assets/js/script.js"> </script>
 		<!-- Cook page js -->
+		<!-- Displaying selected images-->
+		<script src="assets/js/DisplaySelectedImage.js"></script>
 		<!-- Getting country name JS-->
 		<script src="assets/js/GetCityNamesFromCountryId.js"></script>
 		<!-- country names  js-->
