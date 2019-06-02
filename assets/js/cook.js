@@ -1,0 +1,4 @@
+function cook()
+{
+	 alert("laa");
+}

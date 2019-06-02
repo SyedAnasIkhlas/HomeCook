@@ -75,3 +75,33 @@ textarea
 	display:flex;
 	flex-direction:row;
 }
+
+.button
+{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:140px;
+	height:40px;
+	border:none;
+	border:1px solid #948888;
+	border-radius:3px;	
+}
+
+.btn-org
+{
+	background-color:#FF9800;
+	color:white;
+}
+
+.btn-red
+{
+	background-color:#F44336;
+	color:white;
+}
+
+.btn-green
+{
+	background-color:#4CAF50;
+	color:white;
+}

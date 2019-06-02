@@ -22,7 +22,7 @@
 	$quantityField = InputField::createInputField("number", "Quantity", "quantity", null, "required", null, null, null);
 	$descriptionField = InputField::createTextarea(null, "Description", "description", null, null, "required", null, null);
 	$tagsField = InputField::createTextarea(null, "Tags", "tags", "1", "3", "required", null, null);
-	$submitButton = InputField::createInputField("submit", null, "cook", "Upload", null, null, "cook", "cook()");
+	$submitButton = InputField::createInputField("submit", null, "cook", "Cook", null, null, "cook", "cook()");
 	
 	//****
 	//Add new country from modal
@@ -102,8 +102,10 @@
 
 				 <?php
 				  echo $tagsField;
-				  echo $submitButton; 
+				  //echo $submitButton; 
 				  ?>
+
+				  <button type="button" class="button btn-green" name="cook" onclick="cook()">Cook</button>
 
 
 

@@ -11,6 +11,8 @@
 		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 		<script src="../homecook/assets/js/script.js"> </script>
 		<!-- Cook page js -->
+		<!-- Upload page js-->
+		<script src="assets/js/cook.js"></script>
 		<!-- Displaying selected images-->
 		<script src="assets/js/DisplaySelectedImage.js"></script>
 		<!-- Getting country name JS-->
@@ -19,8 +21,6 @@
 		<script src="assets/js/countryName.js"></script>
 		<!-- Add new country and city  js-->
 		<script src="assets/js/AddNew.js"></script>
-		<!-- Check Errors js-->
-		<script src="assets/js/CheckError.js"></script>
 
 
 	</body>
