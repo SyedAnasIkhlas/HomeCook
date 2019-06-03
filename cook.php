@@ -105,17 +105,22 @@
 				  //echo $submitButton; 
 				  ?>
 
-				  <button type="button" class="button btn-green" name="cook" onclick="cook()">Cook</button>
+				  <!-- <button type="button" class="button btn-green" name="cook" onclick="cook()">Cook</button> -->
 
-
+				<button type="button" class="button btn-green" name="cook" onclick="cookIt()">Cook</button>
 
 
 
 			</div>
 
 		</form>
-	</div>		
+
+
+	</div>
+
+
 
  <?php 
 	require_once 'includes/common/footer.php';
   ?>
+
