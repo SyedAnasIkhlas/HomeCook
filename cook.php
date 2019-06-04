@@ -52,7 +52,9 @@
 	?>
 	
 	<div class="uploadForm">
-		<form action="ajax/cooking" method="post" id="cook" enctype="multipart/form-data">
+
+	
+		<form action="cooking" method="post" id="cook" enctype="multipart/form-data">
 			<div class="imagesDisplay">
 				<?php 
 					echo $imageBox; 
@@ -61,6 +63,7 @@
 				?>
 
 			</div>
+
 
 			<div class="inputFields">
 				<?php 
@@ -102,12 +105,12 @@
 
 				 <?php
 				  echo $tagsField;
-				  //echo $submitButton; 
+				  echo $submitButton; 
 				  ?>
 
 				  <!-- <button type="button" class="button btn-green" name="cook" onclick="cook()">Cook</button> -->
 
-				<button type="button" class="button btn-green" name="cook" onclick="cookIt()">Cook</button>
+				<!-- <button type="button" class="button btn-green" name="cook" onclick="cookIt()">Cook</button> -->
 
 
 

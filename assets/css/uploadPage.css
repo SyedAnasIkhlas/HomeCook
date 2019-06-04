@@ -1,5 +1,22 @@
 /*upload page*/
 
+.upload_error_message
+{
+	display: flex;
+    flex-direction: column;
+    border:1px solid #ddd;
+    border-radius:5px;
+    width:710px;
+    margin:0 auto;
+    padding:12px;
+    font-family: 'Poppins', sans-serif;
+}
+.red
+{
+	color:#e41304;
+}
+
+
 .uploadForm
 {
 	width:100%;

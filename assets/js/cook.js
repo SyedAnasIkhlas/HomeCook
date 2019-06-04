@@ -1,13 +1,16 @@
 function cookIt()
 {
+	form = $("#cook")
 
+	var data = new FormData();
+	data.append('cook',form)
 	alert("cooked");
 
 	$.ajax({
 		url: '../../homecook/ajax/cooking.php',
 		type: 'POST',
 		dataType: 'text',
-		data: new FormData(this),
+		data: data,
 	})
 	.done(function(data) {
 		console.log("success");

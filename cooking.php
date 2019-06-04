@@ -1,10 +1,16 @@
+<html>
+		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+		<link rel="stylesheet" type="text/css" href="assets/css/uploadPage.css">
+</html>
+
 <?php 
-	require_once '../includes/connection/config.php';
+	require_once 'includes/connection/config.php';
 
 
 	$errors = "";
 	$error_code_page_link = "<a href='../help/error_codes.php'>Error codes</a>";
-	$error_codes = "Please, visit our ".$error_code_page_link." page to exactly find out why you are facing this error and how you can fix them. Please copy the code";
+	$error_codes = "Please, visit our".$error_code_page_link."page to find out exactly why you are facing these errors and how you can fix them.
+		Please copy the code";
 
 	if (isset($_POST["cook"])) 
 	{
@@ -14,7 +20,7 @@
 		if ($_POST["title"] == "") 
 		{
 			echo "Please add a title";
-			$errors .= "Please add a title";
+			$errors .= "Please add a title<br>";
 		}
 		else
 		{
@@ -25,7 +31,7 @@
 		if ($_POST["quantity"] == "") 
 		{
 			echo "Please add quantity";
-			$errors .= "Please add quantity";
+			$errors .= "Please add quantity<br>";
 		}
 		else
 		{
@@ -36,7 +42,7 @@
 		if ($_POST["description"] == "") 
 		{
 			echo "Please add description";
-			$errors .= "Please add description";
+			$errors .= "Please add description<br>";
 		}
 		else
 		{
@@ -48,7 +54,7 @@
 		if ($_POST["country"] == "") 
 		{
 			echo "Please add country";
-			$errors .= "Please add country";
+			$errors .= "Please add country<br>";
 		}
 		else
 		{
@@ -59,7 +65,7 @@
 		if ($_POST["city"] == "") 
 		{
 			echo "Please add city";
-			$errors .= "Please add city";
+			$errors .= "Please add city<br>";
 		}
 		else
 		{
@@ -70,7 +76,7 @@
 		if ($_POST["status"] == "") 
 		{
 			echo "Please add status";
-			$errors .= "Please add status";
+			$errors .= "Please add status<br>";
 		}
 		else
 		{
@@ -82,7 +88,7 @@
 		if ($_POST["tags"] == "") 
 		{
 			echo "Please add tags";
-			$errors .= "Please add tags";
+			$errors .= "Please add tags<br>";
 		}
 		else
 		{
@@ -132,7 +138,7 @@
 
 				    for($i = 0; $i < count($tmp_name_array); $i++)
 				    {
-				        if(move_uploaded_file($tmp_name_array[$i], "../images/productImage/". $cook_id. "-" .$name_array[$i]))
+				        if(move_uploaded_file($tmp_name_array[$i], "images/productImage/". $cook_id. "-" .$name_array[$i]))
 				        { 
 				            $filepath = "images/productImage/". $cook_id. "-" .$name_array[$i];
 
@@ -151,7 +157,7 @@
 				            	
 				            	if ($query) 
 				            	{
-				            		echo "images and data uploaded";
+				            		header("location:index");
 				            	}
 				            	
 				            }
@@ -159,8 +165,8 @@
 				        }
 				        else 
 				        {
-				           echo "error code:picx023"; 
-				           echo $error_codes;         
+				           $errors .= "Error code:picx023<br>"; 
+				           //echo $error_codes;         
 				        }
 					}
 				}
@@ -169,14 +175,22 @@
 			}
 			else
 			{
-				echo "error code:dbpx024";
-				echo $error_codes;
+				 $errors .= "Error code:dbpx024";
+				//echo $error_codes;
 			}
 		}
 
 		
-
+		if ($errors != "") 
+		{
+			echo "<div class='upload_error_message'><p>Your data has been uploaded to the database, but we are facing some problems on uploading your images.</p><span class='red'>$errors</span><br>$error_codes</div>";
+		}
+		else
+		{
+			header("location:index");
+		}
 
 	}
+
 
  ?>
