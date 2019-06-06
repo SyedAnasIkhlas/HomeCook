@@ -2,6 +2,8 @@
 	require_once '../includes/connection/config.php';
 	require_once '../includes/classes/Countries.php';
 
+	//inserting country name
+
 	if (isset($_POST['countryName'])) 
 	{
 		$country_name = $_POST['countryName'];

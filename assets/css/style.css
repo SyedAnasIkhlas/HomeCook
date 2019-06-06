@@ -25,6 +25,14 @@ input
 	border:1px solid #eee;
 }
 
+select
+{
+	height:40px;
+	border-radius:2px;
+	border:1px solid :#eee;
+	background: #fff;
+}
+
 textarea
 {
 	box-sizing:border-box;
@@ -104,4 +112,10 @@ textarea
 {
 	background-color:#4CAF50;
 	color:white;
+}
+
+.message-red
+{
+	font-size: 12px;
+	color: red;
 }

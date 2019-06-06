@@ -2,12 +2,16 @@ function newCountry()
 {
 	if ($("#addCountry").val() == "") 
 	{
+		alert("You can add your country over here,but we are not responsible if you can't sell your product...Recommended share it with yourfriends and family...")
+		 
 		$(".red").html("Please add a country");
 		setTimeout(function() { $(".red").html(""); }, 2000);//timer to remove message
 		return false;
 	}
 	else
 	{
+
+		alert("You can add your country over here,but we are not responsible if you can't sell your product...Recommended share it with yourfriends and family...")
 		var countryName = $("#addCountry").val().toLowerCase(); 
 		countryName = countryName.substr(0,1).toUpperCase()+countryName.substr(1);
 

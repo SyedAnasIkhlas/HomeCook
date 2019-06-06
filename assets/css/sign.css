@@ -1,0 +1,112 @@
+.center-content
+{
+	border:1px solid #DBDBDB;
+	border-radius:5px;
+	margin:0 auto;
+	width:430px;
+	height:700px;
+	display:flex;
+	flex-direction:column;
+
+
+}
+
+.form-head
+{
+	display:flex;
+	border-bottom:1px solid #DBDBDB;
+
+}
+
+.form-head button
+{
+	background:none;
+	border:none;
+	border-right: 1px solid #DBDBDB;
+}
+
+.form-head button img
+{
+	width:30px;
+	height:30px;
+	margin:0 4px;
+}
+
+.form-head a
+{
+	margin:3px auto;
+}
+
+.form-head a img
+{
+	width:40px;
+}
+
+
+
+.form-body
+{
+
+	height:100%;
+	width:100%;
+	display:flex;
+	flex-direction:row;
+	padding-top:4px;
+	align-items: center;
+	text-align: center;
+	overflow:auto;
+
+}
+
+.form-body input
+{
+	width:70%;
+	margin: 5px 55px;
+	border:1px solid #cac8c8
+
+}
+.form-body input[type="submit"]
+{
+	margin-bottom:25px;
+}
+
+.signup-dropdown
+{
+	margin: 0 64px;
+}
+
+.signup-dropdown select
+{
+	width:99%;
+	margin-bottom:6px;
+	height:40px;
+	border-radius:2px;
+	border:1px solid :#eee;
+}
+
+/* .form-body #password
+{
+	width:100%;
+
+}
+
+.form-body #password-length
+{
+	margin-top:15px;
+	margin-right:59px;	
+} */
+
+.form-body .inline_content.pass
+{
+	display:flex;
+	width:300px;
+	margin:0 auto;
+	align-items:center;
+}
+
+.form-body .inline_content.pass input
+{
+	width:100%;
+	margin:0;
+
+}

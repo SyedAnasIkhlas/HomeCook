@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/style.css">
 		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/header.css">
 		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/uploadPage.css">
+		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/sign.css">
 		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/shortcut.css">
 
 
