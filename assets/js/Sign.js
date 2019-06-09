@@ -73,21 +73,11 @@ $(document).ready(function()
 			 $(function () 
 			 {
 
-		        $('form').on('submit', function (e) 
+		        $('#form').on('submit', function (e) 
 		        {
 
 		          e.preventDefault();
-
-		          if ($("#password").val() != $("#confirmPassword").val()) 
-					{
-						$("#password-message").html("Password do not match").css("color","red");
-						alert("Password do not match")
-						break;
-					}
-					else
-					{
 			
-
 			          $.ajax({
 			          	url: '../../homecook/ajax/userSign.php',
 			          	type: 'POST',
@@ -170,7 +160,41 @@ $(document).ready(function()
 			          	
 			          });
 
-		          	}
+
+
+		        });
+
+		      });
+
+
+			  $(function () 
+			 {
+
+		        $('#signInForm').on('submit', function (e) 
+		        {
+
+		          e.preventDefault();
+			
+			          $.ajax({
+			          	url: '../../homecook/ajax/userSignIn',
+			          	type: 'POST',
+			          	dataType: 'text',
+			          	data: $('form').serialize(),
+			          })
+			          .done(function(data) 
+			          {
+			          	alert(data);
+
+			          })
+			          .fail(function() 
+			          {
+			          	alert("There were some errors...")
+			          })
+			          .always(function() 
+			          {
+			          	
+			          });
+
 
 
 		        });
