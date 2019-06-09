@@ -69,65 +69,114 @@ $(document).ready(function()
 
 		//submitting form through ajax
 		
-		 $(function () 
-		 {
+		
+			 $(function () 
+			 {
 
-        $('form').on('submit', function (e) 
-        {
+		        $('form').on('submit', function (e) 
+		        {
 
-          e.preventDefault();
+		          e.preventDefault();
 
-          $.ajax({
-          	url: '../../homecook/ajax/userSign.php',
-          	type: 'POST',
-          	dataType: 'text',
-          	data: $('form').serialize(),
-          })
-          .done(function(data) 
-          {
-          	var emailUse = "Email already in use";
-          	if (data == emailUse) 
-          	{
-          		$("#email-message").html("Email already in use...").css({
-          			color: 'red'});
-          	}
+		          if ($("#password").val() != $("#confirmPassword").val()) 
+					{
+						$("#password-message").html("Password do not match").css("color","red");
+						alert("Password do not match")
+						break;
+					}
+					else
+					{
+			
 
-          	if (data == "newuser") 
-          	{
-          		window.location.href("../../homecook/kitchen?newSignUp=msg");
-          	}
+			          $.ajax({
+			          	url: '../../homecook/ajax/userSign.php',
+			          	type: 'POST',
+			          	dataType: 'text',
+			          	data: $('form').serialize(),
+			          })
+			          .done(function(data) 
+			          {
+			          	var emailUse = "Email already in use";
 
-          	if (data == "error") 
-          	{
-          		$(".main-error").html("Can't sign up, Please try again...").css({
-          			color: 'red'});
-          	}
+			          	if (data == "user") 
+			          	{
+			          		$("#user-message").html("Sorry Chef another chef is using the same name...").css({
+			          			color: 'red'});
+			          		$("#signButton").removeClass('btn-green');
+			          		$("#signButton").addClass('btn-red');
 
-          	if (data == "phone") 
-          	{
-          		$("#phone_number_message").html("Can't use one phone number more than one time").css({
-          			color: 'red'});
-          	}
-
-          	if (data == "user") 
-          	{
-          		$("#user-message").html("Sorry chef another chef is using the same name...").css({
-          			color: 'red'});
-          	}
-          })
-          .fail(function() 
-          {
-          	alert("There were some errors...")
-          })
-          .always(function() 
-          {
-          	
-          });
+			          	}
+			          	else
+			          	{
+			          		$("#user-message").html("");
+			          	}
 
 
-        });
+			          	if (data == emailUse) 
+			          	{
+			          		$("#email-message").html("Email already in use...").css({
+			          			color: 'red'});
 
-      });
+			          		$("#signButton").removeClass('btn-green');
+			          		$("#signButton").addClass('btn-red');
+			          	}
+			          	else
+			          	{
+			          		$("#email-message").html("");
+			          	}
+
+			          	if (data == "phone") 
+			          	{
+			          		$("#phone_number_message").html("Can't use one phone number more than one time").css({
+			          			color: 'red'});
+			          		$("#signButton").removeClass('btn-green');
+			          		$("#signButton").addClass('btn-red');
+
+			          	}
+			          	else
+			          	{
+			          		$("#phone_number_message").html("");
+			          	}
+
+
+			          	if (data == "error") 
+			          	{
+			          		$(".main-error").html("Can't sign up, Please try again...").css({
+			          			color: 'red'});
+			          		$("#signButton").removeClass('btn-green');
+			          		$("#signButton").addClass('btn-red');
+			          		
+
+			          	}
+			          	else
+			          	{
+			          		$(".main-error").html("");
+			          	}
+
+			          	
+
+			          	if (data == "newuser") 
+			          	{
+			          		window.location.href ="signIn?newSignUp=Sign In Here";
+			          	}
+
+			          })
+			          .fail(function() 
+			          {
+			          	alert("There were some errors...")
+			          })
+			          .always(function() 
+			          {
+			          	
+			          });
+
+		          	}
+
+
+		        });
+
+		      });
+			
 		
 
 

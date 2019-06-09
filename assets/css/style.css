@@ -10,9 +10,33 @@ main
 	padding-top:80px;
 }
 
+@font-face
+{
+	font-family: Poppins;
+	src:url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face
+{
+	font-family: Meddon;
+	src:url(../fonts/Meddon/Meddon.ttf);
+}
+
+@font-face
+{
+	font-family: Short_Stack;
+	src:url(../fonts/Short_Stack/ShortStack-Regular.ttf);
+}
+
+@font-face
+{
+	font-family: Walter_Turncoat;
+	src:url(../fonts/Walter_Turncoat/WalterTurncoat-Regular.ttf);
+}
+
 body
 {
-	font-family: 'Poppins', sans-serif;
+	font-family: Poppins, sans-serif;
 }
 
 input

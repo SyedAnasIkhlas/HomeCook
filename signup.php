@@ -34,7 +34,7 @@
 	  $add_new_city = Modal::createModal(null, $image, "New City", $city_body,"Add","data_targe", "city","newCity()");
  ?>
 	
-	<div class="center-content">
+	<div class="center-content signup">
 		<div class="form-head">
 			<button id="back">
 				<img src="assets/icons/back-arrow.png">
@@ -44,9 +44,11 @@
 		</div>
 
 		<div class="form-body">
+
+			<span class="sign">Sign up</span>
 				<span class="main-error"></span>
 				<form action="" method="POST" id="form">
-				<input type="text" placeholder="Chef Name" value="<?php $name; ?>" name="username" required>
+				<input type="text" placeholder="Chef Name" value="<?php $name; ?>" name="username" required><br>
 				<span id="user-message"></span>
 
 				<input type="email" placeholder="Email" value="<?php $email; ?>" name="email" required><br>
@@ -57,7 +59,7 @@
 					<span id="password-length"></span>
 				</span>
 
-				<input type="password" placeholder="Password Confirm" id="confirmPassword" value="" name="" required>
+				<input type="password" placeholder="Password Confirm" id="confirmPassword" value="" name="" required><br>
 				<span id="password-message"></span>
 
 				<span class="inline_content signup-dropdown "> 
@@ -96,7 +98,7 @@
 
 				
 
-				<input type="submit" name="signup" value="New Kitchen" class="btn-green">
+				<input type="submit" name="signup" value="New Kitchen" class="btn-green" id="signButton">
 
 
 			</form>

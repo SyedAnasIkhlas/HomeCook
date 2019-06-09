@@ -1,14 +1,24 @@
+.center-content.signup
+{
+	border:1px solid #DBDBDB;
+	border-radius:5px;
+	margin:0 auto;
+	width:430px;
+	min-height: 700px;
+	max-height:900px;
+	display:flex;
+	flex-direction:column;
+}
+
 .center-content
 {
 	border:1px solid #DBDBDB;
 	border-radius:5px;
 	margin:0 auto;
 	width:430px;
-	height:700px;
+	height:400px;
 	display:flex;
 	flex-direction:column;
-
-
 }
 
 .form-head
@@ -50,19 +60,21 @@
 	height:100%;
 	width:100%;
 	display:flex;
-	flex-direction:row;
+	flex-direction:column;
 	padding-top:4px;
 	align-items: center;
 	text-align: center;
 	overflow:auto;
+	justify-content:flex-start;
 
 }
 
 .form-body input
 {
 	width:70%;
-	margin: 5px 55px;
-	border:1px solid #cac8c8
+	margin:5px auto;
+	border:1px solid #cac8c8;
+
 
 }
 .form-body input[type="submit"]
@@ -72,7 +84,8 @@
 
 .signup-dropdown
 {
-	margin: 0 64px;
+	margin:0 auto;
+	width:70%;
 }
 
 .signup-dropdown select
@@ -81,25 +94,14 @@
 	margin-bottom:6px;
 	height:40px;
 	border-radius:2px;
-	border:1px solid :#eee;
+	border:1px solid #eee;
 }
 
-/* .form-body #password
-{
-	width:100%;
-
-}
-
-.form-body #password-length
-{
-	margin-top:15px;
-	margin-right:59px;	
-} */
 
 .form-body .inline_content.pass
 {
 	display:flex;
-	width:300px;
+	width:70%;
 	margin:0 auto;
 	align-items:center;
 }
@@ -109,4 +111,83 @@
 	width:100%;
 	margin:0;
 
+}
+
+#user-message
+{
+	font-size:12px;
+	font-weight:bold;
+}
+
+#phone_number_message
+{
+	font-size:12px;
+	font-weight:bolder;
+}
+
+.sign
+{
+	font-family:Short_Stack;
+	font-size:20px;
+	margin:10px 0;
+}
+
+@media screen and (width:768px)
+{
+	.center-content.signup
+	{
+		width:600px;
+	}
+
+	.form-body
+	{
+		width:100%;
+	}
+
+	.form-body input
+	{
+		width:100%;
+	}
+
+	.signup-dropdown
+	{
+		width:100%;
+	}
+
+	.form-body .inline_content.pass
+	{
+		width:100%;
+	}
+}
+
+
+@media screen and (width:1024px)
+{
+	.center-content.signup
+	{
+		width:900px;
+	}
+
+	.form-body
+	{
+		width:100%;
+		display:flex;
+		justify-content:flex-start;
+		margin-left:-100px;
+	}
+
+	.form-body input
+	{
+		width:150%;
+	}
+
+	.signup-dropdown
+	{
+		width:150%;
+	}
+
+	.form-body .inline_content.pass
+	{
+		width:150%;
+	}
 }
