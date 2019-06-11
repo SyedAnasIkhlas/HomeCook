@@ -1,5 +1,7 @@
 <?php 
-	require_once '../includes/connection/config.php';
+		session_start();
+		
+		require_once '../includes/connection/config.php';
 	
 		$signInSource = $_POST['signInSource'];
 		$passwordByUser = sha1($_POST['password']);
@@ -18,17 +20,25 @@
 					$phone = $row['phone_number'];
 					$password = $row['password'];
 					$chef_name = $row['chef_name'];
+					$chef_email = $row['email'];
 				}
 					
 				if ($passwordByUser ==  $password) 
 				{
-					echo "found 1";	
-					echo $chef_name;
-					$_SESSION["chef_name"] = $chef_name; 
+					//echo "found 1";
+					$_SESSION['chef_name'] = $chef_name; 
+
+					if (isset($_SESSION['chef_name'])) 
+					{
+						echo "toKitchen";	
+					}
+					
+					
 				}	
 				else
 				{
-					echo "password does't match";
+					//echo "password does't match";
+					echo "passerror";
 				}
 		}
 		else

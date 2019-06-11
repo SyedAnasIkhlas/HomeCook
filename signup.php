@@ -9,6 +9,12 @@
 	require_once 'getCityFromCountry.php';
 	require_once 'includes/classes/Modal.php';
 
+	// Checking if user is already logged in
+		if (isset($_SESSION['chef_name'])) 
+		{
+			header("location: kitchen?ASU=You are already Signed Up");
+		}
+
 	//****
 	//Add new country from modal
 	//
@@ -99,6 +105,7 @@
 				
 
 				<input type="submit" name="signup" value="New Kitchen" class="btn-green" id="signButton">
+				<a href="signIn" class="a sign">SignIn</a>
 
 
 			</form>

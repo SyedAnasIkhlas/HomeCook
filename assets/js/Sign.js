@@ -183,8 +183,18 @@ $(document).ready(function()
 			          })
 			          .done(function(data) 
 			          {
-			          	alert(data);
+			          	
 
+			          	if (data == "passerror") 
+			          	{
+			          		$(".main-error").html("Email or Password doesn't match").css({
+			          			color: 'red'});
+			          	}
+			          	if (data == "toKitchen")
+			          	{
+			          		window.location.href ="kitchen?msg=Welcome Chef";
+			          		// window.location.href ="kitchen.php";
+			          	}
 			          })
 			          .fail(function() 
 			          {

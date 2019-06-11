@@ -2,10 +2,23 @@
 	require_once 'includes/common/header.php';
 	require_once 'includes/classes/InputFields.php';
 	require_once 'includes/classes/ButtonProvider.php';
-	require_once 'includes/connection/config.php'; 
+	require_once 'includes/connection/config.php';
+
+	
+
+	if (isset($_SESSION['chef_name'])) 
+	{
+		header("location: kitchen?ASI=You are already Signed In");
+	}
+
+
 if (isset($_GET['newSignUp'])) 
 {
-	echo $_GET['newSignUp'];
+	$newSignUp =  $_GET['newSignUp'];
+}
+else
+{
+	$newSignUp = "";
 }
  ?>
 
@@ -21,7 +34,7 @@ if (isset($_GET['newSignUp']))
 		<div class="form-body">
 
 			<span class="sign">Sign In</span>
-				<span class="main-error"></span>
+				<span class="main-error"><?php echo $newSignUp; ?></span>
 
 			<form action="" method="POST" id="signInForm">
 
@@ -29,6 +42,7 @@ if (isset($_GET['newSignUp']))
 				<span id="user-message"></span>
 				<input type="password" placeholder="Password" id="password" value="" name="password" required>
 				<input type="submit" name="signin" value="Cook Something" class="btn-green">
+				<a href="signUp" class="a sign">SignUp</a>
 
 
 			</form>
