@@ -192,7 +192,7 @@ $(document).ready(function()
 			          	}
 			          	if (data == "toKitchen")
 			          	{
-			          		window.location.href ="kitchen?msg=Welcome Chef";
+			          		window.location.href ="index?msg=Welcome Chef";
 			          		// window.location.href ="kitchen.php";
 			          	}
 			          })

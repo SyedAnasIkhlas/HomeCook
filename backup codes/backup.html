@@ -484,3 +484,25 @@ class Countries
 
 }
  ?>
+
+
+<!-- header -->
+
+<?php 
+session_start();
+		require_once $_SERVER['DOCUMENT_ROOT'].'D:/xampp/htdocs/HomeCook/includes/connection/config.php';
+
+ 		// $usernameLoggedIn = isset($_SESSION['chef_name']) ? $_SESSION['chef_name'] : "" ;
+ 		// $userLoggedInObj = new User($con, $usernameLoggedIn);
+ 		
+ 		if (isset($_SESSION["chef_name"])) 
+ 		{
+ 			//echo "<script>alert('user signin');</script>";
+ 		}
+ 		else
+ 		{
+ 			echo "<script>alert('user not signin');</script>";
+ 		}
+
+ 		require_once ('../classes/User.php'); 
+	 ?>			

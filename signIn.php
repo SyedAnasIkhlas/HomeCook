@@ -8,7 +8,7 @@
 
 	if (isset($_SESSION['chef_name'])) 
 	{
-		header("location: kitchen?ASI=You are already Signed In");
+		header("location: index?ASI=You are already Signed In");
 	}
 
 
@@ -41,7 +41,7 @@ else
 				<input type="text" placeholder="Email/Chef Name/Phone Number" value="<?php $name; ?>" name="signInSource" required><br>
 				<span id="user-message"></span>
 				<input type="password" placeholder="Password" id="password" value="" name="password" required>
-				<input type="submit" name="signin" value="Cook Something" class="btn-green">
+				<input type="submit" name="signin" value="Here I Come" class="btn-green">
 				<a href="signUp" class="a sign">SignUp</a>
 
 

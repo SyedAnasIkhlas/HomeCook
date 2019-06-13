@@ -12,7 +12,7 @@
 	// Checking if user is already logged in
 		if (isset($_SESSION['chef_name'])) 
 		{
-			header("location: kitchen?ASU=You are already Signed Up");
+			header("location: index?ASU=You are already Signed Up");
 		}
 
 	//****

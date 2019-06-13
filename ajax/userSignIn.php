@@ -43,6 +43,6 @@
 		}
 		else
 		{
-			echo "try'n change query";
+			echo "passerror";
 		}
  ?>

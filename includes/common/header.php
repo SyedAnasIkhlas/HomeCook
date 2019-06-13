@@ -1,22 +1,7 @@
 <?php 
 	session_start();
-		// require_once('../includes/config.php');
-		// require_once ('../classes/User.php');
-
- 	// 	$usernameLoggedIn = isset($_SESSION['chef_name']) ? $_SESSION['chef_name'] : "" ;
- 	// 	$userLoggedInObj = new User($con, $usernameLoggedIn);
- 		
- 		if (isset($_SESSION["chef_name"])) 
- 		{
- 			//echo "<script>alert('user signin');</script>";
- 		}
- 		else
- 		{
- 			echo "<script>alert('user not signin');</script>";
- 		}
-	
-
- ?>
+	// require_once ('../connection/config.php'); 
+?>
 
 
 <!DOCTYPE html>
@@ -35,6 +20,7 @@
 		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/header.css">
 		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/uploadPage.css">
 		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/sign.css">
+		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/product-display.css">
 		<link rel="stylesheet" type="text/css" href="../homecook/assets/css/shortcut.css">
 
 
