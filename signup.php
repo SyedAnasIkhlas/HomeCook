@@ -1,5 +1,5 @@
 <?php 
-	require_once 'includes/common/header.php';
+	require_once 'common/header.php';
 	require_once 'includes/classes/InputFields.php';
 	require_once 'includes/classes/ButtonProvider.php';
 	require_once 'includes/classes/UploadImage.php';
@@ -15,29 +15,6 @@
 			header("location: index?ASU=You are already Signed Up");
 		}
 
-	//****
-	//Add new country from modal
-	//
-
-	$image = "<img src='https://img.icons8.com/ios/50/000000/plus-2-math-filled.png'>";
-
-	$country_body = InputField::createInputField("text", "Country Name", "new_country", null, null, null,"addCountry", null)
-	."<span class='red'></span>
-	  <span class='green'></span>";
-
-
-	$add_new_country = Modal::createModal(null, $image, "New Country", $country_body,"Add","data_target", "country","newCountry()");
-
-
-	//
-	//Add new city Modal
-	//
-	
-		$city_body = InputField::createInputField("text", "City Name", "new_city", null, null, null,"addCity", null)
-	."<span class='red'></span>
-	  <span class='green'></span>";
-
-	  $add_new_city = Modal::createModal(null, $image, "New City", $city_body,"Add","data_targe", "city","newCity()");
  ?>
 	
 	<div class="center-content signup">
@@ -67,27 +44,7 @@
 
 				<input type="password" placeholder="Password Confirm" id="confirmPassword" value="" name="" required><br>
 				<span id="password-message"></span>
-
-				<span class="inline_content signup-dropdown "> 
-
-				 <select name="country" class="country" id='country' required>
-				 	<option value="" selected disabled>Select Country</option>
-				 </select>
-
-				 	<?php 
-				 		echo $add_new_country;	
-				 	 ?>
-				</span> 	 
-				<!-- Displaying city name from country -->
-				
-				<span class="inline_content signup-dropdown ">
-					<select name='city' class='city' id="city" required>
-						<option value=''selected disabled>Select City</option>
-					</select>
-					<?php 
-					 echo $add_new_city;
-					 ?>
-				</span>	 
+ 
 
 				<input type="number" placeholder="Phone Number" id="phone_number" value="<?php $phone_number; ?>" name="phone_number" required><br>
 				<span id="phone_number_message"></span>
@@ -104,7 +61,7 @@
 
 				
 
-				<input type="submit" name="signup" value="New Kitchen" class="btn-green" id="signButton">
+				<input type="submit" name="signup" value="Sign Up" class="btn-green" id="signButton">
 				<a href="signIn" class="a sign">SignIn</a>
 
 
@@ -116,5 +73,5 @@
 
 
  <?php 
-	require_once 'includes/common/footer.php';
+	require_once 'common/footer.php';
  ?>

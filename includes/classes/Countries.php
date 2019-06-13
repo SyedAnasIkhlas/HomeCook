@@ -16,7 +16,25 @@ class Countries
 		$query = $this->con->prepare("SELECT * FROM countries ORDER BY country ASC");
 		$query->execute();
 
-		$html .= "<option value=''selected disabled>Select Country</option>";
+		$html .= "<option value=''selected disabled>Select Country?</option>";
+
+		while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
+		{
+			$country_id = $row['id'];
+			$country_name = $row['country'];
+			$html .= "<option value='$country_id'>$country_name</option>";
+		}
+
+			return $html;
+	}
+
+	public function customerCountries()
+	{
+		$html = "";
+		$query = $this->con->prepare("SELECT * FROM countries ORDER BY country ASC");
+		$query->execute();
+
+		$html .= "<option value=''selected disabled>Origin of this dish?</option>";
 
 		while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
 		{

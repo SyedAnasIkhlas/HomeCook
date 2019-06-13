@@ -1,5 +1,5 @@
 <?php
-	require_once 'includes/common/header.php';
+	require_once 'common/header.php';
 	require_once 'includes/classes/InputFields.php';
 	require_once 'includes/classes/ButtonProvider.php';
 	require_once 'includes/connection/config.php';
@@ -53,5 +53,5 @@ else
 
 
  <?php 
-	require_once 'includes/common/footer.php';
+	require_once 'common/footer.php';
  ?>

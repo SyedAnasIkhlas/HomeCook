@@ -8,8 +8,8 @@
 		$username = $_POST["username"];
 		$recovery_email = $_POST["recovery_email"];
 		$phone_number = $_POST["phone_number"];
-		$country = $_POST["country"];
-		$city = $_POST["city"];
+		$country = 0;
+		$city = 0;
 		$question = $_POST["question"];
 		$answer = $_POST["answer"];
 

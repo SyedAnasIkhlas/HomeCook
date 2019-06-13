@@ -1,6 +1,12 @@
 <?php 
 	session_start();
-	// require_once ('../connection/config.php'); 
+		require_once ('../homecook/includes/connection/config.php');
+		require_once ('../homecook/includes/classes/User.php');
+		require_once ('../homecook/includes/classes/ProductDisplay.php');
+
+		
+		$usernameLoggedIn = isset($_SESSION['chef_name']) ? $_SESSION['chef_name'] : "" ;
+ 		$userLoggedInObj = new User($con, $usernameLoggedIn);
 ?>
 
 
@@ -11,7 +17,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
-		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+	
 		<link rel='shortcut icon' href='https://img.icons8.com/ios/50/000000/chef-hat.png'>
 		<title>HomeCooks</title>
 	<!--ALL CSS STYLE SHEETS-->

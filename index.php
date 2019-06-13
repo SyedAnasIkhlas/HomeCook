@@ -1,6 +1,6 @@
-<?php require_once ('includes/common/header.php'); ?>
+<?php require_once ('common/header.php'); ?>
 
-<div class='main-product-container' >
+<!-- <div class='main-product-container' >
 
 	<div class='country-name' title='Country'>
 		<span class='country-name-text'>
@@ -50,8 +50,16 @@
 		</span>
 	</div>
 
-</div>
+</div> -->
+
+<?php 
+
+$imageSrc = "images/productImage/57-H.PNG";
+
+	$Productisplay = ProductDisplay::product_display("22","snas","2","tasty",$imageSrc,"skr","1");
+	echo $Productisplay;
+
+ ?>
 
 
-
-<?php require_once ('includes/common/footer.php'); ?>
+<?php require_once ('common/footer.php'); ?>

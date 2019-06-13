@@ -4,17 +4,21 @@
 </html>
 
 <?php 
-	require_once 'includes/connection/config.php';
-
+	session_start();
+		require_once 'includes/connection/config.php'; 
+		require_once 'includes/classes/User.php';
+		$usernameLoggedIn = isset($_SESSION['chef_name']) ? $_SESSION['chef_name'] : "" ;
+ 		$userLoggedInObj = new User($con, $_SESSION['chef_name']); 
+		
 
 	$errors = "";
-	$error_code_page_link = "<a href='../help/error_codes.php'>Error codes</a>";
+	$error_code_page_link = "<a href='../homecook/help/error_codes?$errors'>Error codes</a>";
 	$error_codes = "Please, visit our".$error_code_page_link."page to find out exactly why you are facing these errors and how you can fix them.
 		Please copy the code";
 
-	if (isset($_POST["cook"])) 
-	{
-		$chef = "REMOVE THIS FROM COOKING.PHP";
+	if (isset($_POST["cook"]))
+	{ 
+		$chef = $userLoggedInObj->getUsername();
 
 		// checking for title
 		if ($_POST["title"] == "") 
@@ -62,15 +66,9 @@
 		}
 
 		// checking for city
-		if ($_POST["city"] == "") 
-		{
-			echo "Please add city";
-			$errors .= "Please add city<br>";
-		}
-		else
-		{
-			$city = $_POST["city"];
-		}
+		
+			$city = "No City";
+
 
 		// checking for status
 		if ($_POST["status"] == "") 

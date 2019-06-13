@@ -1,5 +1,5 @@
 <?php 
-	require_once 'includes/common/header.php';
+	require_once 'common/header.php';
 
 	// if (!isset($_SESSION["chef_name"])) 
 	// {
@@ -21,5 +21,5 @@
 
 
  <?php 
- require_once 'includes/common/footer.php';
+ require_once 'common/footer.php';
   ?>
