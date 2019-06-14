@@ -4,6 +4,7 @@
 		require_once ('../homecook/includes/classes/User.php');
 		require_once ('../homecook/includes/classes/ProductDisplay.php');
 		require_once '../homecook/includes/classes/SearchBarAndCartProvider.php';
+		require_once '../homecook/includes/classes/Product.php';
 
 		
 		$usernameLoggedIn = isset($_SESSION['chef_name']) ? $_SESSION['chef_name'] : "" ;
