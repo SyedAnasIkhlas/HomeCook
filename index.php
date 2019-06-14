@@ -1,63 +1,30 @@
 <?php require_once ('common/header.php'); ?>
 
-<!-- <div class='main-product-container' >
-
-	<div class='country-name' title='Country'>
-		<span class='country-name-text'>
-			<a href='#to_all_food_of_this_country'>pkr</a>
-		</span>
-		
-	</div>
-
-	<div class='product-container'>
-
-		<a class='product-title' href='#same_As_image'>
-			<span class='title'>
-				Biryani
-			</span>
-		</a>
-
-		<a class='product-image' href='kitchen.php'>
-			<img src='images/productImage/-asus-zenfone-5z-5.jpg' alt=''>	
-		</a>
-
-		<div class='add-to-table' title='Add To Table' onclick='addToCart(id)'>
-			<span>Add To Table</span>
-			<img src='assets/icons/table-white.png' class='table_icon'>
-		</div>
-
-		<div class='product-chef-name' title='Chef Name'>
-			<a class='chef_name_provider' href='kitchen?chef_id=' >
-				<span class="default-chef">
-					Chef:
-				</span>
-				<span class='chef'>
-					Syed Anas Ikhlas
-				</span>
-				
-			</a>
-		</div>
-		
-		
-	</div>
-
-
-
-
-	<div class='stock-indicater' title='Stock'>
-		<span class='stock-indicater-text'>
-			In
-		</span>
-	</div>
-
-</div> -->
+<?php 
+	echo SearchBarAndCartProvider::create($con, $userLoggedInObj);
+ ?>
 
 <?php 
 
-$imageSrc = "images/productImage/57-H.PNG";
+	$query = $con->prepare("SELECT * FROM `cook");
+	$query->execute();
 
-	$Productisplay = ProductDisplay::product_display("22","snas","2","tasty",$imageSrc,"skr","1");
-	echo $Productisplay;
+	while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
+	{
+		$id = $row['id'];
+		$chef = $row['chef'];
+		$title = $row['title'];
+		$country_id = $row['country'];
+
+		$imageSrc = "images/productImage/57-H.PNG";
+
+		$Productisplay = ProductDisplay::product_display($id,$chef,"2",$title,$imageSrc,"skr",$country_id);
+		echo $Productisplay;
+	}
+
+ 
+ 
+ 	
 
  ?>
 
