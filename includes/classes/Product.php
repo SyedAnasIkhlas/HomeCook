@@ -19,9 +19,39 @@
 	        return $this->productData["id"];
 	    }
 
+	    public function getTitle() 
+		{
+	        return $this->productData["title"];
+	    }
+
 	    public function getCountryId() 
 		{
 	       return  $this->productData["country"];
+	    }
+
+	    public function getQuantity() 
+		{
+	       return  $this->productData["quantity"];
+	    }
+
+	    public function getTags() 
+		{
+	       return  $this->productData["tags"];
+	    }
+
+	     public function getDescription() 
+		{
+	       return  $this->productData["description"];
+	    }
+
+	    public function getStatus() 
+		{
+	       return  $this->productData["status"];
+	    }
+
+	     public function getUploadeDate() 
+		{
+	       return  $this->productData["date"];
 	    }
 
 	    public function getCountryCode() 

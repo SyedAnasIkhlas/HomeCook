@@ -1,4 +1,12 @@
+.product-view-area
+{
 
+	padding:none;
+	magin:0px;
+	display:flex;
+	flex-wrap: wrap;
+	
+}
 .main-product-container
 {
 
@@ -20,9 +28,18 @@
 	display:flex;
 	justify-content:center;
 	align-items:center;
-	background:#00ff0a;
 	cursor:pointer;
 
+}
+
+.stock-indicater.green
+{
+	background:#00ff0a;
+}
+
+.stock-indicater.red
+{
+	background:#F44336;
 }
 
 .stock-indicater .stock-indicater-text
@@ -88,8 +105,8 @@
 .product-title .title
 {
 	font-size:12px;
-	margin-left:2px;
-	margin-right:2px;
+	margin-left:12px;
+	margin-right:6px;
 	cursor:pointer;
 }
 

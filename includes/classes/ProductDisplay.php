@@ -1,49 +1,86 @@
 <?php 
+
+	require_once 'Product.php';
 	class ProductDisplay
 	{
-		public static function product_display($chef_id,$chef_name,$product_id,$productTile,
-												$imageSrc,$country_name,$country_id)
+		public static function product_display($con, $cook_id)
 		{
-			
-				return"<div class='main-product-container' >
+			$product = new Product($con, $cook_id);
+
+			$chef_id = $product->getChefId();
+			$chef_name = $product->getChefName();
+			$product_id = $product->getProductId();
+			$productTile = $product->getTitle();
+			$imageSrc = $product->getImage();
+			$country_name = $product->getCountryCode();
+			$country_id = $product->getCountryId();
+			$status = $product->getStatus();
+			$quantityVal = $product->getQuantity();
+
+			if ($quantityVal > 0) 
+			{
+				$quantity = "
+						<div class='stock-indicater green' title='Stock'>
+							<span class='stock-indicater-text'>
+								In
+							</span>
+						</div>";
+			}
+			else
+			{
+				$quantity = "
+						<div class='stock-indicater red' title='Stock'>
+							<span class='stock-indicater-text'>
+								Out
+							</span>
+						</div>";
+			}
+
+				return"
+						<div class='main-product-container' >
+						
+							<div class='country-name' title='Country'>
+								<span class='country-name-text'>
+									<a href='search?c_id=$country_id'>$country_name</a>
+								</span>
 								
-									<div class='country-name' title='Country'>
-										<span class='country-name-text'>
-											<a href='search?c_id=$country_id'>$country_name</a>
+							</div>
+						
+							<div class='product-container'>
+						
+								<a class='product-title' href='dish?p_id=$product_id'>
+									<span class='title'>
+										$productTile
+									</span>
+								</a>
+						
+								<a class='product-image' href='dish?p_id=$product_id'>
+									<img src='$imageSrc' alt='$imageSrc'>	
+								</a>
+						
+								<div class='add-to-table' title='Add To Table' onclick='addToTable($product_id)'>
+									<span>Add To Table</span>
+									<img src='assets/icons/table-white.png' class='table_icon'>
+								</div>
+						
+								<div class='product-chef-name' title='Chef Name'>
+									<a class='chef_name_provider' href='kitchen?chef_id=$chef_id' >
+										<span class='default-chef'>
+											Chef:
+										</span>
+										<span class='chef'>
+											$chef_name
 										</span>
 										
-									</div>
-								
-									<div class='product-container'>
-								
-										<a class='product-title' href='dish?p_id=$product_id'>
-											<span class='title'>
-												$productTile
-											</span>
-										</a>
-								
-										<a class='product-image' href='dish?p_id=$product_id'>
-											<img src='$imageSrc' alt='$imageSrc'>	
-										</a>
-								
-										<div class='add-to-table' title='Add To Table' onclick='addToTable($product_id)'>
-											<span>Add To Table</span>
-											<img src='assets/icons/table-white.png' class='table_icon'>
-										</div>
-								
-										<div class='product-chef-name' title='Chef Name'>
-											<a class='chef_name_provider' href='kitchen?chef_id=$chef_id' >
-												<span class='default-chef'>
-													Chef:
-												</span>
-												<span class='chef'>
-													$chef_name
-												</span>
-												
-											</a>
-										</div>	
-								</div>";
-				
+									</a>
+								</div>	
+							</div>
+
+							$quantity
+
+						</div>";
+			}
+		
 		}
-	}
+	
  ?>
