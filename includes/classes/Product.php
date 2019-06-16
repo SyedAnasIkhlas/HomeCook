@@ -54,6 +54,11 @@
 	       return  $this->productData["date"];
 	    }
 
+	     public function getProductIpAddress() 
+		{
+	       return  $this->productData["ip_address"];
+	    }
+
 	    public function getCountryCode() 
 		{
 	       $country_id =  $this->productData["country"];
@@ -64,6 +69,20 @@
 	       $row_country = $query->fetch(PDO::FETCH_ASSOC);
 
 	       $country = $row_country['code'];
+
+	       return $country;
+	    }
+
+	     public function getCountryName() 
+		{
+	       $country_id =  $this->productData["country"];
+	       $query=$this->con->prepare("SELECT * FROM `countries` WHERE id = :id");
+	       $query->bindParam(":id", $country_id);
+	       $query->execute();
+
+	       $row_country = $query->fetch(PDO::FETCH_ASSOC);
+
+	       $country = $row_country['country'];
 
 	       return $country;
 	    }

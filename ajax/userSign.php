@@ -1,8 +1,9 @@
 <?php 
 	require_once '../includes/connection/config.php';
+	require_once '../includes/classes/GetIpAddress.php';
 	
 	// User signup and signin
-	
+		$ip_address = GetIpAddress::get_ip_address();
 		$email = $_POST["email"];
 		$password = sha1($_POST["password"]);
 		$username = $_POST["username"];
@@ -62,10 +63,10 @@
 				{
 					$query = $con->prepare("INSERT INTO `chef`(`chef_name`, `email`, `password`, `country_id`,
 											 `city_id`, `phone_number`, `recovery_email`,
-											  `recovery_question`, `recovery_answer`, `user_picture`,
+											  `recovery_question`, `recovery_answer`, `user_picture`,`ip_address`,
 											   `date_signup`) VALUES (:username,:email,:password,
 											   :country, :city,:phone_number,:recovery_email,:recovery_question,
-											   :recovery_answer, :user_picture,NOW())");
+											   :recovery_answer, :user_picture, :ip_address, NOW())");
 					$query->bindParam(":username",$chef_name);
 					$query->bindParam(":email",$email);
 					$query->bindParam(":password",$password);
@@ -75,6 +76,7 @@
 					$query->bindParam(":recovery_email",$recovery_email);
 					$query->bindParam(":recovery_question",$question);
 					$query->bindParam(":recovery_answer",$answer);
+					$query->bindParam(":ip_address",$ip_address);
 					$query->bindParam(":user_picture",$randomImage);
 
 					$query->execute();

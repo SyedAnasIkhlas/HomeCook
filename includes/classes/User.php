@@ -60,6 +60,11 @@
 	        return $this->userData["user_picture"];
 	    }
 
+	    public function getUserIpAddress() 
+		{
+	        return $this->userData["ip_address"];
+	    }
+
 	    public function getSignUpDate() 
 		{
 	        return $this->userData["date_signup"];

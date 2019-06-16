@@ -5,9 +5,21 @@
 	padding: 0px;
 	box-sizing: border-box;
 }
-main
+section
 {
-	padding-top:80px;
+	display: flex;
+}
+
+.content
+{
+	display:flex;
+	justify-content:center;
+}
+
+.ads
+{
+	width:20%;
+	height:auto;
 }
 
 @font-face

@@ -3,4 +3,5 @@
 
 	//logout
 	session_destroy();
+	header("location:../homecook");
  ?>

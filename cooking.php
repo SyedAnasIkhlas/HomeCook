@@ -7,10 +7,11 @@
 	session_start();
 		require_once 'includes/connection/config.php'; 
 		require_once 'includes/classes/User.php';
+		require_once 'includes/classes/GetIpAddress.php';
 		$usernameLoggedIn = isset($_SESSION['chef_name']) ? $_SESSION['chef_name'] : "" ;
  		$userLoggedInObj = new User($con, $_SESSION['chef_name']); 
 		
-
+ 	$ip_address = GetIpAddress::get_ip_address();
 	$errors = "";
 	$error_code_page_link = "<a href='../homecook/help/error_codes?$errors'>Error codes</a>";
 	$error_codes = "Please, visit our".$error_code_page_link."page to find out exactly why you are facing these errors and how you can fix them.
@@ -100,7 +101,7 @@
 		else
 		{
 
-			$query = $con->prepare("INSERT INTO `cook`( `chef`, `title`, `description`, `country`, `city`, `status`, `quantity`, `tags`, `images_ref`, `date`) VALUES (:chef,:title,:description,:country,:city,:status,:quantity,:tags,'1',NOw())");
+			$query = $con->prepare("INSERT INTO `cook`( `chef`, `title`, `description`, `country`, `city`, `status`, `quantity`, `tags`, `images_ref`, `date`, `ip_address`) VALUES (:chef,:title,:description,:country,:city,:status,:quantity,:tags,'1',NOW(),:ip_address)");
 			$query->bindParam(":chef",$chef);
 			$query->bindParam(":title",$title);
 			$query->bindParam(":description",$description);
@@ -109,6 +110,7 @@
 			$query->bindParam(":status",$status);
 			$query->bindParam(":quantity",$quantity);
 			$query->bindParam(":tags",$tags);
+			$query->bindParam(":ip_address",$ip_address);
 			//$query->bindParam(":images_id",$images_id);
 			$query->execute();
 

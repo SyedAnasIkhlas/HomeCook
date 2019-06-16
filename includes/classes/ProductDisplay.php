@@ -12,7 +12,8 @@
 			$product_id = $product->getProductId();
 			$productTile = $product->getTitle();
 			$imageSrc = $product->getImage();
-			$country_name = $product->getCountryCode();
+			$country_code = $product->getCountryCode();
+			$country_name = $product->getCountryName();
 			$country_id = $product->getCountryId();
 			$status = $product->getStatus();
 			$quantityVal = $product->getQuantity();
@@ -20,7 +21,7 @@
 			if ($quantityVal > 0) 
 			{
 				$quantity = "
-						<div class='stock-indicater green' title='Stock'>
+						<div class='stock-indicater green' title='$quantityVal in Stock'>
 							<span class='stock-indicater-text'>
 								In
 							</span>
@@ -29,7 +30,7 @@
 			else
 			{
 				$quantity = "
-						<div class='stock-indicater red' title='Stock'>
+						<div class='stock-indicater red' title='$quantityVal in Stock'>
 							<span class='stock-indicater-text'>
 								Out
 							</span>
@@ -39,16 +40,16 @@
 				return"
 						<div class='main-product-container' >
 						
-							<div class='country-name' title='Country'>
+							<div class='country-name' title='$country_name'>
 								<span class='country-name-text'>
-									<a href='search?c_id=$country_id'>$country_name</a>
+									<a href='search?c_id=$country_id'>$country_code</a>
 								</span>
 								
 							</div>
 						
 							<div class='product-container'>
 						
-								<a class='product-title' href='dish?p_id=$product_id'>
+								<a class='product-title' href='dish?p_id=$product_id' title='$productTile'>
 									<span class='title'>
 										$productTile
 									</span>
