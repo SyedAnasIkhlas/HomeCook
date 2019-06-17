@@ -10,13 +10,22 @@
 		{
 			$total_number = Cart::totalItemsInCart($con, $userLoggedInObj);
 
+			if (isset($_GET['search_query'])) 
+			{
+				$search_q = $_GET['search_query'];
+			}
+			else
+			{
+				$search_q = "";
+			}
+
 			return"
 			<div class='search-bar-cart' title='Search Here'>
 				<div class='search-area'>
 					<form action='search' method='GET'>
-						<input type='text' placeholder='Search' name='search_query' class='search-box'>
+						<input type='text' placeholder='Search' name='search_query' class='search-box' value='$search_q' required>
 
-						<button type='submit' name='search' class='search-button'>
+						<button type='submit' name='search' class='search-button' id='searchButton'>
 							<img src='assets/icons/spoon-white.png'>
 						</button>
 					</form>

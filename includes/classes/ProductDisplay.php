@@ -13,6 +13,7 @@
 			$productTile = $product->getTitle();
 			$imageSrc = $product->getImage();
 			$country_code = $product->getCountryCode();
+			$description = $product->getDescription();
 			$country_name = $product->getCountryName();
 			$country_id = $product->getCountryId();
 			$status = $product->getStatus();
@@ -55,12 +56,12 @@
 									</span>
 								</a>
 						
-								<a class='product-image' href='dish?p_id=$product_id'>
+								<a class='product-image' href='dish?p_id=$product_id' title='$description'>
 									<img src='$imageSrc' alt='$imageSrc'>	
 								</a>
 						
 								<div class='add-to-table' title='Add To Table' onclick='addToTable($product_id)'>
-									<span>Add To Table</span>
+									<span id='tableText'>Add To Table</span>
 									<img src='assets/icons/table-white.png' class='table_icon'>
 								</div>
 						

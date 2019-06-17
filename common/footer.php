@@ -19,6 +19,8 @@
 		<!-- Cook page js -->
 		<!-- Upload page js-->
 		<script src="assets/js/Cook.js"></script>
+		<!-- searchbar and cart js-->
+		<script src="assets/js/SearchBarAndCart.js"></script>
 		<!-- Displaying selected images-->
 		<script src="assets/js/DisplaySelectedImage.js"></script>
 		<!-- Getting country name JS-->
