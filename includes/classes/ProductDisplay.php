@@ -60,7 +60,7 @@
 									<img src='$imageSrc' alt='$imageSrc'>	
 								</a>
 						
-								<div class='add-to-table' title='Add To Table' onclick='addToTable($product_id)'>
+								<div class='add-to-table blue' title='Add To Table' onclick='addToTable($product_id)'>
 									<span id='tableText'>Add To Table</span>
 									<img src='assets/icons/table-white.png' class='table_icon'>
 								</div>

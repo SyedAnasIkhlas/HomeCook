@@ -12,10 +12,19 @@
 	if (isset($_POST['product_id'])) 
 	{
 		$product_id = $_POST['product_id'];
-		
-		$cart = Cart::addToCart($con, $product_id, $userLoggedInObj);
 
-		echo $cart;
+		// if ($userLoggedInObj->isLoggedIn() == "") 
+		// {
+		// 	$cart = Cart::addToCartFromIpAddress($con, $product_id);
+		// 	echo $cart;
+		// }
+		// else
+		// {
+			$cart = Cart::addToCartUser($con, $product_id, $userLoggedInObj);
+			echo $cart;
+		// }
+		
+		
 
 		//return Cart::totalItemsInCart($con, $userLoggedInObj)
 	}

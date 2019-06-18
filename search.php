@@ -3,39 +3,19 @@
 	if (isset($_GET['search_query'])) 
 	{
 		$search_query = $_GET['search_query'];	
+		$search_result = SearchResultsProvider::search($con, $search_query, null, null, null);
+		$total_results_found = $search_result['result'];
+		$total_products_found = $search_result['product'];
 	}
 
  ?>
 
 
-
+<?php echo $total_results_found; ?>
 <div class="product-view-area">
 <?php
-	$query = $con->prepare("SELECT * FROM cook WHERE tags LIKE CONCAT('%', :search_query, '%')
-                            OR chef LIKE CONCAT('%', :search_query, '%')");
-	$query->bindParam(":search_query",$search_query);
-	$query->execute();
-
-	if ($total = $query->rowCount()>1) 
-	{
-		while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
-	{
-		$cook_id = $row["id"];
-		$product = ProductDisplay::product_display($con, $cook_id);
-		 
-		echo $product;
- 	} 
-
-	}
-	else
-	{
-		echo $total;
-	}
-
-
-
-	
- ?>
+	echo $total_products_found;
+?>
 
  </div>
 	

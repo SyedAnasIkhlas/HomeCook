@@ -140,7 +140,19 @@
 	justify-content:center;
 	align-items:center;
 	cursor:pointer;
+	
+}
+
+.add-to-table.blue
+{
 	background:#00BFFF;
+	color: #000;
+}
+
+.add-to-table.red
+{
+	background:red;
+	color: #000;
 }
 
 .add-to-table .table_icon
