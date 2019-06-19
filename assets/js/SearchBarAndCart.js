@@ -4,16 +4,16 @@ function addToTable(product_id)
 		url: 'ajax/addToCart.php',
 		type: 'POST',
 		data: {product_id: product_id},
-		dataType: 'text',
-		
+		dataType: 'text'
 	})
 	.done(function(data) {
 		alert(data);
-		$(".badge").html(data); 	
 	})
-	.fail(function(data) {
-		alert(data);
+	.fail(function() {
+		console.log("error");
 	})
+	.always(function() {
+		console.log("complete");
+	});
 
-	
 }

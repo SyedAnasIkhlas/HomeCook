@@ -325,6 +325,18 @@
 
 
 		}
+
+
+
+			// Product_id and cook_id are the same thing
+		public static function addToCartFromIpAddress($con, $product_id)
+		{
+			$ip_address = GetIpAddress::get_ip_address(); 
+
+			//$return =  json_encode(array("hi" => $$user_id));
+
+
+		}//end of function
  ?>
  		
 

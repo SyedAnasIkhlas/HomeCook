@@ -67,7 +67,9 @@
 
 				if ($query->rowCount() > 0) 
 				{
-					echo "Out of stock... Your Request has been sended to chef, Please check back later.";
+					
+					$stock = "Out of stock... Your Request has been sended to chef, Please check back later.";
+					return json_encode(array("stock" => $stock));
 					exit();
 				}
 				else
@@ -80,8 +82,8 @@
 					$query->bindParam(":ip_address",$ip_address);
 					$query->execute();
 
-					echo "Out of stock... Your Request has been sended to chef, Please check back later.";
-
+					$stock = "Out of stock... Your Request has been sended to chef, Please check back later.";
+					return json_encode(array("stock" => $stock));
 					exit();
 				}
 			}
@@ -114,10 +116,14 @@
 						$total_quantity = $row['quantity'];
 						$add_updated_quantity = intval($total_quantity) + 1;
 
-						$query_update = $con->prepare("UPDATE `cook` SET quantity = :add_updated_quantity");
+						$query_update = $con->prepare("UPDATE `cook` SET quantity = :add_updated_quantity WHERE id = :product_id");
 						$query_update->bindParam(":add_updated_quantity",$add_updated_quantity);
+						$query_update->bindParam(":product_id",$product_id);
 						$query_update->execute();
 
+						$cart = -1;			
+						return json_encode(array("cart" => $cart, "quantity"=>$quantity));
+					
 
 
 						
@@ -141,9 +147,13 @@
 						$total_quantity = $row['quantity'];
 						$add_updated_quantity = intval($total_quantity) - 1;
 
-						$query_update = $con->prepare("UPDATE `cook` SET quantity = :add_updated_quantity");
+						$query_update = $con->prepare("UPDATE `cook` SET quantity = :add_updated_quantity WHERE id = :product_id");
 						$query_update->bindParam(":add_updated_quantity",$add_updated_quantity);
+						$query_update->bindParam(":product_id",$product_id);
 						$query_update->execute();
+
+						$cart = +1;			
+						return json_encode(array("cart" => $cart, "quantity"=>$quantity));
 					}
 				}
 				else
@@ -173,9 +183,13 @@
 						$total_quantity = $row['quantity'];
 						$add_updated_quantity = intval($total_quantity) + 1;
 
-						$query_update = $con->prepare("UPDATE `cook` SET quantity = :add_updated_quantity");
+						$query_update = $con->prepare("UPDATE `cook` SET quantity = :add_updated_quantity WHERE id = :product_id");
 						$query_update->bindParam(":add_updated_quantity",$add_updated_quantity);
+						$query_update->bindParam(":product_id",$product_id);
 						$query_update->execute();
+
+						$cart = -1;			
+						return json_encode(array("cart" => $cart, "quantity"=>$quantity));
 
 						
 						// json_encode
@@ -203,30 +217,26 @@
 						$total_quantity = $row['quantity'];
 						$add_updated_quantity = intval($total_quantity) - 1;
 
-						$query_update = $con->prepare("UPDATE `cook` SET quantity = :add_updated_quantity");
+						$query_update = $con->prepare("UPDATE `cook` SET quantity = :add_updated_quantity WHERE id = :product_id");
 						$query_update->bindParam(":add_updated_quantity",$add_updated_quantity);
+						$query_update->bindParam(":product_id",$product_id);
 						$query_update->execute();
+
+						$cart = +1;			
+						return json_encode(array("cart" => $cart, "quantity"=>$quantity));
 
 
 					}
+
+					// return json_encode(array("cart" => $cart, "quantity"=>$quantity,"stock"=>$stock));
 				}
 
 
 			}
 
+
 		}//end of function
-
-
-
-		// Product_id and cook_id are the same thing
-		public static function addToCartFromIpAddress($con, $product_id)
-		{
-			$ip_address = GetIpAddress::get_ip_address(); 
-
-			//$return =  json_encode(array("hi" => $$user_id));
-
-
-		}//end of function	
+	
 
 
 

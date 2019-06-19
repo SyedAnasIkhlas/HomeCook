@@ -13,8 +13,6 @@
 	echo $product;
  	} 
 
-
-	
  ?>
 
  </div>
