@@ -1,7 +1,7 @@
 <?php 
 	class SearchResultsProvider
 	{
-		public static function search($con, $search_term,$sort_by,$chef_name,$status)
+		public static function search($con, $userLoggedInObj, $search_term,$sort_by,$chef_name,$status)
 		{
 			if ($chef_name == "") 
 			{
@@ -36,7 +36,7 @@
 				while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
 			{
 				$cook_id = $row["id"];
-				$product = ProductDisplay::product_display($con, $cook_id);
+				$product = ProductDisplay::product_display($con, $cook_id, $userLoggedInObj);
 				$product_data = array('product' => $product, 'result' => $result); 
 				return $product_data;
 

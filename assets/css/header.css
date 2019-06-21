@@ -7,16 +7,18 @@ header
 	align-items:center;
 	margin:0 auto;
 	font-size:15px;
+
+
 }
 
 .border-line
 {
-	margin-left:15px
+	margin-left:15px;
 }
 
 .user-panel
 {
-	width:100%;
+	width:94%;
 	background:#FF9E00;
 	height:40px;
 	display:flex;
@@ -25,6 +27,9 @@ header
 	padding:0 5px;
 	border-bottom-left-radius:5px;
 	border-bottom-right-radius:5px;
+	position:fixed;
+	top:0;
+	z-index:1;
 }
 
 

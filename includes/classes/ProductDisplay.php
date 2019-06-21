@@ -3,7 +3,7 @@
 	require_once 'Product.php';
 	class ProductDisplay
 	{
-		public static function product_display($con, $cook_id)
+		public static function product_display($con, $cook_id, $userLoggedInObj)
 		{
 			$product = new Product($con, $cook_id);
 
@@ -38,6 +38,63 @@
 						</div>";
 			}
 
+
+
+		
+			if ($userLoggedInObj->isLoggedIn() == "") 
+			{
+				$ip_address = GetIpAddress::get_ip_address();
+				$query = $con->prepare("SELECT * FROM `visiter_table` WHERE cook_id = :cook_id AND ip_address = :ip_address");
+				$query->bindParam(":cook_id",$cook_id);
+				$query->bindParam(":ip_address",$ip_address);
+				$query->execute();
+
+				
+
+				if ($query->rowCount() != 0) 
+				{
+					$addToTable  ="
+					<div class='add-to-table red' title='Remove From Table' onclick='addToTable(this, $product_id)'>
+						<span id='tableText'>Remove From Table</span>
+						<img src='assets/icons/table-white.png' class='table_icon'>
+					</div>";
+				}
+				else
+				{
+					$addToTable  ="
+					<div class='add-to-table blue' title='Add To Table' onclick='addToTable(this, $product_id)'>
+						<span id='tableText'>Add To Table</span>
+						<img src='assets/icons/table-white.png' class='table_icon'>
+					</div>";
+				}	
+
+			}
+			else
+			{
+				$user_id = $userLoggedInObj->getUserId();
+				$query = $con->prepare("SELECT * FROM `customer_table` WHERE cook_id = :cook_id AND user_id = :user_id");
+				$query->bindParam(":cook_id",$cook_id);
+				$query->bindParam(":user_id",$user_id);
+				$query->execute();
+
+				if ($query->rowCount() != 0) 
+				{
+					$addToTable  ="
+					<div class='add-to-table red' title='Remove From Table' onclick='addToTable(this, $product_id)'>
+						<span id='tableText'>Remove From Table Table</span>
+						<img src='assets/icons/table-white.png' class='table_icon'>
+					</div>";
+				}
+				else
+				{
+					$addToTable  ="
+					<div class='add-to-table blue' title='Add To Table' onclick='addToTable(this, $product_id)'>
+						<span id='tableText'>Add To Table</span>
+						<img src='assets/icons/table-white.png' class='table_icon'>
+					</div>";
+				}	
+			}
+
 				return"
 						<div class='main-product-container' >
 						
@@ -60,10 +117,7 @@
 									<img src='$imageSrc' alt='$imageSrc'>	
 								</a>
 						
-								<div class='add-to-table blue' title='Add To Table' onclick='addToTable($product_id)'>
-									<span id='tableText'>Add To Table</span>
-									<img src='assets/icons/table-white.png' class='table_icon'>
-								</div>
+								$addToTable
 						
 								<div class='product-chef-name' title='Chef Name'>
 									<a class='chef_name_provider' href='kitchen?chef_id=$chef_id' >

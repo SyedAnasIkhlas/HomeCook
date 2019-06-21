@@ -1,5 +1,6 @@
 <?php 
 	require_once 'GetIpAddress.php';
+	require_once 'Product.php';
 	class Cart
 	{
 		public static function totalItemsInCart($con, $userLoggedInObj)
@@ -48,6 +49,16 @@
 				$empty_user_id = 0;
 			}
 
+			$customer_table = $con->prepare("SELECT * FROM `customer_table` WHERE cook_id = :product_id AND user_id = :user_id");
+					$customer_table->bindParam(":product_id",$product_id);
+					$customer_table->bindParam(":user_id",$user_id);
+					$customer_table->execute();
+
+			$visiter_table =  $con->prepare("SELECT * FROM `visiter_table` WHERE cook_id = :product_id AND ip_address = :ip_address");
+					$visiter_table->bindParam(":product_id",$product_id);
+					$visiter_table->bindParam(":ip_address",$ip_address);
+					$visiter_table->execute();
+
 			
 
 			$query = $con->prepare("SELECT * FROM `cook` WHERE id = :product_id");
@@ -56,6 +67,19 @@
 
 			$row = $query->fetch(PDO::FETCH_ASSOC);
 			$quantity = $row['quantity'];
+
+			//new query to check if product is in customer table
+			
+			if ($visiter_table->rowCount() > 0) 
+			{
+				$quantity = $quantity + 1;
+			}
+			else if ($customer_table->rowCount() > 0) 
+			{
+				$quantity = $quantity + 1;
+			}
+
+			//end of new query
 
 			if ($quantity < 1 ) 
 			{
@@ -94,12 +118,9 @@
 				{
 					$ip_address = GetIpAddress::get_ip_address();
 
-					$query = $con->prepare("SELECT * FROM `visiter_table` WHERE cook_id = :product_id AND ip_address = :ip_address");
-					$query->bindParam(":product_id",$product_id);
-					$query->bindParam(":ip_address",$ip_address);
-					$query->execute();
+					;
 
-					if ($query->rowCount() > 0) 
+					if ($visiter_table->rowCount() > 0) 
 					{
 						$query = $con->prepare("DELETE FROM `visiter_table` WHERE cook_id = :product_id AND ip_address = :ip_address");
 						$query->bindParam(":product_id",$product_id);
@@ -108,21 +129,23 @@
 
 						//adding one back to quantity in cook table
 
-						$query = $con->prepare("SELECT * FROM `cook` WHERE id = :product_id");
-						$query->bindParam(":product_id",$product_id);
-						$query->execute();
-
-						$row = $query->fetch(PDO::FETCH_ASSOC);
-						$total_quantity = $row['quantity'];
-						$add_updated_quantity = intval($total_quantity) + 1;
+						$quantity;
+						$add_updated_quantity = intval($quantity) + 1;
 
 						$query_update = $con->prepare("UPDATE `cook` SET quantity = :add_updated_quantity WHERE id = :product_id");
 						$query_update->bindParam(":add_updated_quantity",$add_updated_quantity);
 						$query_update->bindParam(":product_id",$product_id);
 						$query_update->execute();
 
-						$cart = -1;			
-						return json_encode(array("cart" => $cart, "quantity"=>$quantity));
+						$cart = -1;
+						$add_to_table_button_text = "Add To Table";			
+						$add_to_table_button_class = "add-to-table blue";			
+						return json_encode(
+							array(
+						 	"quantity"=>$quantity,
+						  	'buttonText' => $add_to_table_button_text,
+						  	"buttonClass"=>$add_to_table_button_class 
+						));
 					
 
 
@@ -139,13 +162,8 @@
 
 						//remove one from quantity in cook table
 
-						$query = $con->prepare("SELECT * FROM `cook` WHERE id = :product_id");
-						$query->bindParam(":product_id",$product_id);
-						$query->execute();
-
-						$row = $query->fetch(PDO::FETCH_ASSOC);
-						$total_quantity = $row['quantity'];
-						$add_updated_quantity = intval($total_quantity) - 1;
+						$quantity;
+						$add_updated_quantity = intval($quantity) - 1;
 
 						$query_update = $con->prepare("UPDATE `cook` SET quantity = :add_updated_quantity WHERE id = :product_id");
 						$query_update->bindParam(":add_updated_quantity",$add_updated_quantity);
@@ -153,18 +171,22 @@
 						$query_update->execute();
 
 						$cart = +1;			
-						return json_encode(array("cart" => $cart, "quantity"=>$quantity));
+						$add_to_table_button_text = "Remove From Table";			
+						$add_to_table_button_class = "add-to-table red";			
+						return json_encode(
+							array(
+						 	"quantity"=>$quantity,
+						  	'buttonText' => $add_to_table_button_text,
+						  	"buttonClass"=>$add_to_table_button_class 
+						));
 					}
 				}
 				else
 				{
 					
 
-					$query = $con->prepare("SELECT * FROM `customer_table` WHERE cook_id = :product_id AND user_id = :user_id");
-					$query->bindParam(":product_id",$product_id);
-					$query->bindParam(":user_id",$user_id);
-					$query->execute();
-					if ($query->rowCount() > 0) 
+					
+					if ($customer_table->rowCount() > 0) 
 					{
 						$query = $con->prepare("DELETE FROM `customer_table` WHERE cook_id = :product_id AND user_id = :user_id");
 						$query->bindParam(":product_id",$product_id);
@@ -175,13 +197,8 @@
 
 						//adding one back to quantity in cook table
 
-						$query = $con->prepare("SELECT * FROM `cook` WHERE id = :product_id");
-						$query->bindParam(":product_id",$product_id);
-						$query->execute();
-
-						$row = $query->fetch(PDO::FETCH_ASSOC);
-						$total_quantity = $row['quantity'];
-						$add_updated_quantity = intval($total_quantity) + 1;
+						$quantity;
+						$add_updated_quantity = intval($quantity) + 1;
 
 						$query_update = $con->prepare("UPDATE `cook` SET quantity = :add_updated_quantity WHERE id = :product_id");
 						$query_update->bindParam(":add_updated_quantity",$add_updated_quantity);
@@ -189,7 +206,14 @@
 						$query_update->execute();
 
 						$cart = -1;			
-						return json_encode(array("cart" => $cart, "quantity"=>$quantity));
+						$add_to_table_button_text = "Add To Table";			
+						$add_to_table_button_class = "add-to-table blue";			
+						return json_encode(
+							array(
+						 	"quantity"=>$quantity,
+						  	'buttonText' => $add_to_table_button_text,
+						  	"buttonClass"=>$add_to_table_button_class 
+						));
 
 						
 						// json_encode
@@ -209,13 +233,8 @@
 
 						//remove one from quantity in cook table
 
-						$query = $con->prepare("SELECT * FROM `cook` WHERE id = :product_id");
-						$query->bindParam(":product_id",$product_id);
-						$query->execute();
-
-						$row = $query->fetch(PDO::FETCH_ASSOC);
-						$total_quantity = $row['quantity'];
-						$add_updated_quantity = intval($total_quantity) - 1;
+						$quantity;
+						$add_updated_quantity = intval($quantity) - 1;
 
 						$query_update = $con->prepare("UPDATE `cook` SET quantity = :add_updated_quantity WHERE id = :product_id");
 						$query_update->bindParam(":add_updated_quantity",$add_updated_quantity);
@@ -223,12 +242,19 @@
 						$query_update->execute();
 
 						$cart = +1;			
-						return json_encode(array("cart" => $cart, "quantity"=>$quantity));
+						$add_to_table_button_text = "Remove From Table";			
+						$add_to_table_button_class = "add-to-table red";			
+						return json_encode(
+							array(
+						 	"quantity"=>$quantity,
+						  	'buttonText' => $add_to_table_button_text,
+						  	"buttonClass"=>$add_to_table_button_class 
+						));
 
 
 					}
 
-					// return json_encode(array("cart" => $cart, "quantity"=>$quantity,"stock"=>$stock));
+					// return json_encode(array( "quantity"=>$quantity,"stock"=>$stock));
 				}
 
 

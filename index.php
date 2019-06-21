@@ -1,4 +1,4 @@
-<?php require_once ('common/header.php'); ?> 
+<?php require_once ('common/header.php');?> 
 
 <div class="product-view-area">
 <?php
@@ -8,7 +8,7 @@
 	while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
 	{
 		$cook_id = $row["id"];
-		$product = ProductDisplay::product_display($con, $cook_id);
+		$product = ProductDisplay::product_display($con, $cook_id, $userLoggedInObj);
 		 
 	echo $product;
  	} 
