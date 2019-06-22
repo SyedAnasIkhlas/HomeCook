@@ -20,6 +20,7 @@
 	if (isset($_POST["cook"]))
 	{ 
 		$chef = $userLoggedInObj->getUsername();
+		$price = $_POST["price"];
 
 		// checking for title
 		if ($_POST["title"] == "") 
@@ -101,9 +102,10 @@
 		else
 		{
 
-			$query = $con->prepare("INSERT INTO `cook`( `chef`, `title`, `description`, `country`, `city`, `status`, `quantity`, `tags`, `images_ref`, `date`, `ip_address`) VALUES (:chef,:title,:description,:country,:city,:status,:quantity,:tags,'1',NOW(),:ip_address)");
+			$query = $con->prepare("INSERT INTO `cook`( `chef`, `title`, `description`,`price`, `country`, `city`, `status`, `quantity`, `tags`, `images_ref`, `date`, `ip_address`) VALUES (:chef,:title,:description,:country,:city,:status,:quantity,:tags,'1',NOW(),:ip_address)");
 			$query->bindParam(":chef",$chef);
 			$query->bindParam(":title",$title);
+			$query->bindParam(":price",$price);
 			$query->bindParam(":description",$description);
 			$query->bindParam(":country",$country);
 			$query->bindParam(":city",$city);

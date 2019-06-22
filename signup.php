@@ -1,5 +1,5 @@
 <?php 
-	require_once 'common/header.php';
+	require_once 'common/headerWithoutSearchBar.php';
 	require_once 'includes/classes/InputFields.php';
 	require_once 'includes/classes/ButtonProvider.php';
 	require_once 'includes/classes/UploadImage.php';

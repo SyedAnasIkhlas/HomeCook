@@ -29,7 +29,7 @@
 	<body>
 		<nav>
 			<header>
-				<div class='user-panel'>
+				<div class='user-panel without-search'>
 					<div class="user-panel-left">
 						<span class="user-country-name">Saudi Arabia</span>
 						<span class='cash-on-delivery-message-toolpit' title='Pay cash on your door steps.'>Cash on Delivery</span>
@@ -93,24 +93,18 @@
 						
 					</div>
 				</div>
-				<?php 
-				
-					echo SearchBarAndCartProvider::create($con, $userLoggedInObj);
-								 	
-				?>
+				<div class='search-bar-cart visible'>
+
+				</div>
 			</header>
 
 			
 		</nav>	
 
 		<main>
-			<section class='content-section'>
+			<section class='main-content-section'>
 
-				<div class="ads">
-					
-				</div>
-
-		<div class="content">
+		<div class="main-content">
 	 
 			
 

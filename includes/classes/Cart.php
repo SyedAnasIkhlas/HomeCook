@@ -67,6 +67,7 @@
 
 			$row = $query->fetch(PDO::FETCH_ASSOC);
 			$quantity = $row['quantity'];
+			$price = $row['price'];
 
 			//new query to check if product is in customer table
 			
@@ -153,9 +154,10 @@
 					}
 					else
 					{
-						$query = $con->prepare("INSERT INTO `visiter_table`(`cook_id`, `ip_address`) VALUES (:product_id, :ip_address)");
+						$query = $con->prepare("INSERT INTO `visiter_table`(`cook_id`, `ip_address`,`price`) VALUES (:product_id, :ip_address,:price)");
 						$query->bindParam(":product_id",$product_id);
 						$query->bindParam(":ip_address",$ip_address);
+						$query->bindParam(":price",$price);
 						$query->execute();
 
 						
@@ -224,9 +226,10 @@
 					}
 					else
 					{
-						$query = $con->prepare("INSERT INTO `customer_table`(`cook_id`, `user_id`) VALUES (:product_id, :user_id)");
+						$query = $con->prepare("INSERT INTO `customer_table`(`cook_id`, `user_id`,price) VALUES (:product_id, :user_id, :price)");
 						$query->bindParam(":product_id",$product_id);
 						$query->bindParam(":user_id",$user_id);
+						$query->bindParam(":price",$price);
 						$query->execute();
 
 						

@@ -85,10 +85,6 @@ function addToTable( button, product_id)
 			})
 			.done(function(totalitems) 
 			{
-				if (totalitems < 0) 
-				{
-					totalitems = 0;
-				}
 
 				$(".badge").html(totalitems);
 				console.log(totalitems)

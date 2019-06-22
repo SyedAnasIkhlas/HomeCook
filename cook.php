@@ -1,7 +1,7 @@
 <?php 
 	require_once 'includes/classes/InputFields.php';
 	require_once 'includes/classes/ButtonProvider.php';
-	require_once 'common/header.php';
+	require_once 'common/headerWithoutSearchBar.php';
 	require_once 'includes/classes/UploadImage.php';
 	require_once 'includes/connection/config.php';
 	require_once 'includes/classes/Countries.php';
@@ -9,6 +9,7 @@
 	require_once 'getCityFromCountry.php';
 	require_once 'includes/classes/Modal.php';
 	require_once 'includes/classes/User.php';
+
 
 
 
@@ -26,6 +27,7 @@
 	// $imageBoxSm2 = UploadImage::imageUploaderSm("uploadFile[]", "uploadFile3", "select_image3"); 
 	$titleField = InputField::createInputField("text", "Title", "title", null, "required", null, null, null);
 	$quantityField = InputField::createInputField("number", "Total Plates", "quantity", null, "required", null, null, null);
+	$priceField = InputField::createInputField("number", "Price", "price", null, "required", null, null, null);
 	$descriptionField = InputField::createTextarea(null, "Description", "description", null, null, "required", null, null);
 	$tagsField = InputField::createTextarea(null, "Tags", "tags", "1", "3", "required", null, null);
 	$submitButton = InputField::createInputField("submit", null, "cook", "Cook", null, null, "cook", "cook()");
@@ -50,6 +52,7 @@
 					echo $titleField;
 					echo $descriptionField;
 					echo $quantityField;
+					echo $priceField;
 				 ?>
 
 				 <select name="status" class="stockControll" required>
@@ -84,6 +87,7 @@
 
 	</div>
 
+	
 
 
  <?php 

@@ -81,7 +81,7 @@
 				{
 					$addToTable  ="
 					<div class='add-to-table red' title='Remove From Table' onclick='addToTable(this, $product_id)'>
-						<span id='tableText'>Remove From Table Table</span>
+						<span id='tableText'>Remove From Table</span>
 						<img src='assets/icons/table-white.png' class='table_icon'>
 					</div>";
 				}

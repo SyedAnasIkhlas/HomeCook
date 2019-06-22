@@ -388,7 +388,6 @@
 		justify-content:center;
 		align-items:center;
 		flex-direction:column;
-
 	}
 
 	.img_view
@@ -451,6 +450,91 @@
 		margin:auto;
 		width:80%;
 		margin-left:30px;
+		margin-top:5px;
+	}
+
+}
+
+	@media screen and (min-width:320px)
+{
+	.imagesDisplay
+	{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+
+	}
+
+	.img_view
+	{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+		margin:0 auto;
+	}
+
+	.img_view input
+	{
+		margin-left:30px;
+		margin-bottom:14px;
+		width:90%;
+	}
+	
+	.imageUploadBox
+	{
+		width:100px;
+		height:100px;
+		margin-left:140px;	
+		}
+
+	.imageUploadBoxSm
+	{
+		width:95px;
+		height:95px;
+	}
+	#select_image1
+	{
+		font-size:10px;
+		font-weight:bold;
+		margin-left:49px;
+	}
+
+	#select_image2
+	{
+		font-size:10px;
+		font-weight:bold;
+		margin-right:13px;
+	}
+
+	#select_image3
+	{
+		font-size:10px;
+		font-weight:bold;
+		margin-right:10px;
+	}
+	
+	.inputFields input
+	{
+		margin:auto;
+		width:80%;
+		margin-left:50px;
+	}
+
+	.inputFields textarea
+	{
+		margin:auto;
+		width:80%;
+		margin-left:50px;
+		margin-top:5px;
+	}
+
+	.inputFields select
+	{
+		margin:auto;
+		width:80%;
+		margin-left:50px;
 		margin-top:5px;
 	}
 

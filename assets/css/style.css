@@ -16,6 +16,12 @@ section
 	justify-content:center;
 }
 
+.main-content
+{
+	display:flex;
+	justify-content:center;
+}
+
 .ads
 {
 	width:20%;
@@ -105,6 +111,21 @@ textarea
 
 }
 
+.main-content
+{
+	display:flex;
+	flex-direction:column;
+	box-sizing:border-box;
+	padding-left:30px;
+	padding-right:30px;
+	padding-top:20px;
+	padding-bottom:20px;
+	height:auto;
+	width:100%;
+	margin:0 auto;
+
+}
+
 .red
 {
 	color: red;
@@ -155,4 +176,22 @@ textarea
 {
 	font-size: 12px;
 	color: red;
+}
+
+.modal-backdrop 
+{
+  	position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 0vw;
+    height: 0vh;
+    background-color: #000;
+}
+
+.modal.show .modal-dialog 
+{
+    display: flex;
+    margin-top: 50px;
+    z-index: 2000;
 }
