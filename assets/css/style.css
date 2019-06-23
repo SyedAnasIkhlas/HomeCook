@@ -195,3 +195,12 @@ textarea
     margin-top: 50px;
     z-index: 2000;
 }
+
+.modal-body
+{
+	height: auto;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

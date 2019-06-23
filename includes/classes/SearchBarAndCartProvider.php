@@ -14,6 +14,7 @@
 		
 		public static function create($con, $userLoggedInObj)
 		{
+			$image = "<img src='assets/icons/plate-white.png' class='cart-image'>";
 
 			if ($userLoggedInObj->isLoggedIn() == "") 
 			{
@@ -24,21 +25,22 @@
 
 				if ($query->rowCount() == 0) 
 				{
-					$body =  "Nothing in cart";
+					$product =  "Nothing in cart";
+					$modal = Modal::createModal(null, $image, "Cart", $product,"Checkout","cart", 'cart',null);
 				}
-				
-				while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
+				else
 				{
-					$product_id = $row['cook_id'];
-					$body = $product_id;
 					$product = ProductDisplay::product_display($con, $product_id, $userLoggedInObj);
 
-
-			$image = "<img src='assets/icons/plate-white.png' class='cart-image'>";
-			// $body = ItemsInCart::totalItemsInCart($con, $userLoggedInObj);
-			$modal = Modal::createModal(null, $image, "Cart", $product,"Checkout","cart", 'cart',null);
-				}
-				
+					while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
+					{
+						$product_id = $row['cook_id'];
+						$body = $product_id;
+						
+						// $body = ItemsInCart::totalItemsInCart($con, $userLoggedInObj);
+						$modal = Modal::createModal(null, $image, "Cart", $product,"Checkout","cart", 'cart',null);
+					}
+				}	
 
 			
 			}
@@ -50,24 +52,26 @@
 				$query->execute();
 				if ($query->rowCount() == 0) 
 				{
-					$body = "Nothing in cart";
+					$product = "Nothing in cart";
+					$modal = Modal::createModal(null, $image, "Cart", $product,"Checkout","cart", 'cart',null);
+
 				}
-				while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
+				else
 				{
-					$product_id = $row['cook_id'];
-					$body =  $product_id;
 					$product = ProductDisplay::product_display($con, $product_id, $userLoggedInObj);
-
-
-			$image = "<img src='assets/icons/plate-white.png' class='cart-image'>";
-			// $body = ItemsInCart::totalItemsInCart($con, $userLoggedInObj);
-			$modal = Modal::createModal(null, $image, "Cart", $product,"Checkout","cart", 'cart',null);
-				}
+					
+					while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
+					{
+						$product_id = $row['cook_id'];
+						$body =  $product_id;
+						
+						
+						// $body = ItemsInCart::totalItemsInCart($con, $userLoggedInObj);
+						$modal = Modal::createModal(null, $image, "Cart", $product,"Checkout","cart", 'cart',null);
+					}
+				}	
 				
 			}
-
-
-			
 
 			$total_number = Cart::totalItemsInCart($con, $userLoggedInObj);
 

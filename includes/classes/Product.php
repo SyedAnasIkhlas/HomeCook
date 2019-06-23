@@ -24,6 +24,11 @@
 	        return $this->productData["title"];
 	    }
 
+	    public function getPrice() 
+		{
+	        return $this->productData["price"];
+	    }
+
 	    public function getCountryId() 
 		{
 	       return  $this->productData["country"];
