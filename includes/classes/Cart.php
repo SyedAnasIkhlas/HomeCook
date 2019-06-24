@@ -34,6 +34,49 @@
 
 		}
 
+		public static function cook_id_of_items_in_cart($con, $userLoggedInObj, $dataNeeded)
+		{
+			$user = $userLoggedInObj->isLoggedIn();
+
+			if ($user == "") 
+			{
+				$ip_address = GetIpAddress::get_ip_address();
+				$query = $con->prepare("SELECT * FROM `visiter_table` WHERE ip_address = :ip_address");
+				$query->bindParam(":ip_address",$ip_address);
+				$query->execute();
+
+				while($row = $query->fetch(PDO::FETCH_ASSOC))
+				{
+					$dataNeeded = $row[$dataNeeded];
+					$product_display = ProductDisplay::cart_product_display($con,$dataNeeded,$userLoggedInObj);
+					return $product_display;
+				}
+				
+				
+
+			}
+			else
+			{
+				$user_id = $userLoggedInObj->getUserId();
+				$query = $con->prepare("SELECT * FROM `customer_table` WHERE user_id = :user_id");
+				$query->bindParam(":user_id",$user_id);
+				$query->execute();
+
+				while($row = $query->fetch(PDO::FETCH_ASSOC))
+				{
+					$dataNeeded = $row[$dataNeeded];
+					$product_display = ProductDisplay::cart_product_display($con,$dataNeeded,$userLoggedInObj);
+					return $product_display;
+				}
+				
+
+
+			}
+
+			
+
+		}
+
 
 		// Product_id and cook_id are the same thing
 		public static function addToCartUser($con, $product_id, $userLoggedInObj)

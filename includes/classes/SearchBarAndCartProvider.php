@@ -50,26 +50,6 @@
 				$query = $con->prepare("SELECT * FROM `customer_table` WHERE user_id = :user_id");
 				$query->bindParam(":user_id",$user_id);
 				$query->execute();
-				if ($query->rowCount() == 0) 
-				{
-					$product = "Nothing in cart";
-					$modal = Modal::createModal(null, $image, "Cart", $product,"Checkout","cart", 'cart',null);
-
-				}
-				else
-				{
-					$product = ProductDisplay::product_display($con, $product_id, $userLoggedInObj);
-					
-					while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
-					{
-						$product_id = $row['cook_id'];
-						$body =  $product_id;
-						
-						
-						// $body = ItemsInCart::totalItemsInCart($con, $userLoggedInObj);
-						$modal = Modal::createModal(null, $image, "Cart", $product,"Checkout","cart", 'cart',null);
-					}
-				}	
 				
 			}
 
@@ -99,9 +79,11 @@
 				<div class='icon-wrapper' title='Total Items on Dinning Table'>
 					<div class='cart-area'>
 						<div class='cart'>
-						   
-						  <i class='icon-grey'>$modal</i>
-						  
+						  <a href='cart'> 
+							  <i class='icon-grey'>
+								$image
+							  </i>
+						  </a>
 						   <span class='badge'>$total_number<q{1: cite='*'}></q></span>
 						</div>
 					</div>

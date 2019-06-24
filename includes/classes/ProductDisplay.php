@@ -1,6 +1,7 @@
 <?php 
 
 	require_once 'Product.php';
+
 	class ProductDisplay
 	{
 		public static function product_display($con, $cook_id, $userLoggedInObj)
@@ -170,28 +171,28 @@
 				$status = $product->getStatus();
 				$quantityVal = $product->getQuantity();
 
-				if ($quantityVal > 0) 
+				$length = 50;
+
+				if ( strlen($description) > $length) 
 				{
-					$quantity = "
-							<div class='stock-indicater green' title='$quantityVal in Stock'>
-								<span class='stock-indicater-text'>
-									In
-								</span>
-							</div>";
+					$description = substr($description,0,$length) . '...';
 				}
 				else
 				{
-					$quantity = "
-							<div class='stock-indicater red' title='$quantityVal in Stock'>
-								<span class='stock-indicater-text'>
-									Out
-								</span>
-							</div>";
+					$description = $description;
 				}
 
+				if ( strlen($productTitle) > $length) 
+				{
+					$productTitle = substr($productTitle,0,$length) . '...';
+				}
+				else
+				{
+					$productTitle = $productTitle;
+				}
+				
 
 
-			
 				if ($userLoggedInObj->isLoggedIn() == "") 
 				{
 					$ip_address = GetIpAddress::get_ip_address();
@@ -200,24 +201,8 @@
 					$query->bindParam(":ip_address",$ip_address);
 					$query->execute();
 
-					
-
-					if ($query->rowCount() != 0) 
-					{
-						$addToTable  ="
-						<div class='add-to-table red' title='Remove From Table' onclick='addToTable(this, $product_id)'>
-							<span id='tableText'>Remove From Table</span>
-							<img src='assets/icons/table-white.png' class='table_icon'>
-						</div>";
-					}
-					else
-					{
-						$addToTable  ="
-						<div class='add-to-table blue' title='Add To Table' onclick='addToTable(this, $product_id)'>
-							<span id='tableText'>Add To Table</span>
-							<img src='assets/icons/table-white.png' class='table_icon'>
-						</div>";
-					}	
+					$row = $query->fetch(PDO::FETCH_ASSOC);
+					$quantityAddedToCart = $row['quantity'];
 
 				}
 				else
@@ -227,23 +212,9 @@
 					$query->bindParam(":cook_id",$cook_id);
 					$query->bindParam(":user_id",$user_id);
 					$query->execute();
+					$row = $query->fetch(PDO::FETCH_ASSOC);
+					$quantityAddedToCart = $row['quantity'];
 
-					if ($query->rowCount() != 0) 
-					{
-						$addToTable  ="
-						<div class='add-to-table red' title='Remove From Table' onclick='addToTable(this, $product_id)'>
-							<span id='tableText'>Remove From Table</span>
-							<img src='assets/icons/table-white.png' class='table_icon'>
-						</div>";
-					}
-					else
-					{
-						$addToTable  ="
-						<div class='add-to-table blue' title='Add To Table' onclick='addToTable(this, $product_id)'>
-							<span id='tableText'>Add To Table</span>
-							<img src='assets/icons/table-white.png' class='table_icon'>
-						</div>";
-					}	
 				}
 
 				if ($productPrice <= 1) 
@@ -258,32 +229,35 @@
 					return"
 							<div class='itemsContainer'>
 								<div class='checkBox'>
-									<input type='radio' name='check'>
+									<input type='radio' name='delete' value='$product_id'>
 								</div>
 
-							 <div class='image'>
-							 	<img src='$imageSrc' alt='$productTitle'>
-							 </div>
+							<a href='dish?p_id=$product_id'>
+								 <div class='image'>
+								 	<img src='$imageSrc' alt='$productTitle'>
+								 </div>
+							 </a>
+
 							 <div class='title-description'>
 							 	<div class='title'>
-							 		$productTitle
+							 		<a href='dish?p_id=$product_id'>$productTitle</a>
 							 	</div>
 
 							 	<div class='description'>
 							 		$description
 							 	</div>
 
-							 	<div class='stock-left' title='$quantity left in stock'>
-							 		<span class='stock-color'><span class='black'>$quantity </span> left in stock  </span>
+							 	<div class='stock-left' title='$quantityVal left in stock'>
+							 		<span class='stock-color'><span class='black'>$quantityVal </span> left in stock  </span>
 							 	</div>
 							 </div>
 
 							 <div class='price'>
-							 	$productPrice
+							 	$productPrice SR
 							 </div>
 
 							 <div class='quantity'>
-							 	<input type='number' value='<?php echo $quantity; ?>'>
+							 	<input type='number' value='$quantityAddedToCart'>
 							 </div>
 
 						</div>";
