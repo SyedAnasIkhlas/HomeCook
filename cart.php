@@ -1,57 +1,28 @@
-<?php 
-	require_once 'common/headerWithoutSearchBar.php'; 
+<?php require_once 'common/headerWithoutSearchBar.php'; ?>
 
-	if (isset($_POST['delete'])) 
-	{
-		$cook_id = $_POST['delete'];
-		echo $cook_id;
-	}
+<div id="cart-items">
+	<?php echo Cart::cook_id_of_items_in_cart($con, $userLoggedInObj); ?>
+</div>
 
 
+<div id="price-for-cart">
 
-
-
-
-
+	<div id="price-sub-text">
+		Total:
+	</div>
 	
-			$user = $userLoggedInObj->isLoggedIn();
-
-			if ($user == "") 
-			{
-				$ip_address = GetIpAddress::get_ip_address();
-				$query = $con->prepare("SELECT * FROM `visiter_table` WHERE ip_address = :ip_address");
-				$query->bindParam(":ip_address",$ip_address);
-				$query->execute();
-
-				while($row = $query->fetch(PDO::FETCH_ASSOC))
-				{
-					$cook_id = $row['cook_id'];
-					$product_display = ProductDisplay::cart_product_display($con,$cook_id,$userLoggedInObj);
-					echo $product_display;
-				}
-				
-				
-
-			}
-			else
-			{
-				$user_id = $userLoggedInObj->getUserId();
-				$query = $con->prepare("SELECT * FROM `customer_table` WHERE user_id = :user_id");
-				$query->bindParam(":user_id",$user_id);
-				$query->execute();
-
-				while($row = $query->fetch(PDO::FETCH_ASSOC))
-				{
-					$cook_id = $row['cook_id'];
-					$product_display = ProductDisplay::cart_product_display($con,$cook_id,$userLoggedInObj);
-					echo $product_display;
-				}
-				
-
-
-			}
-	
-?>
+	<div class="inline-price-tag">
+		<div id="price-sub-text">
+			SR
+		</div>
+		<div id="price-value">
+		<?php 	
+			$cart = Cart::cartTotal($con, $userLoggedInObj);
+			echo $cart;		 
+		?>
+		</div>
+	</div>
+</div>
 
 <div class='cart-main-functions'>
 	<button class="button remove-button btn-red" onclick='updateCart()'>Remove seleted items</button>

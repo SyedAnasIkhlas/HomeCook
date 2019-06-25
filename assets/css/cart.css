@@ -1,11 +1,13 @@
 .itemsContainer
 {
+    margin-top:30px;
     display:flex;
     width:100%;
     border-bottom:1px solid #eee;
     padding-bottom:1%;
     align-items:center;
     justify-content:space-evenly
+
 }
 
 .itemsContainer .image
@@ -113,6 +115,28 @@
 .cart-main-functions .remove-button
 {
     padding:3px;
+}
+
+#price-for-cart
+{
+    display:flex;
+    justify-content:flex-end;
+    padding-right:14px;
+    color:#212529;
+}
+
+.inline-price-tag
+{
+    display:flex;
+    margin-left:6px;
+    justify-content:space-evenly;
+    color:#f54956;
+    width:45px;
+}
+
+#price-value
+{
+    
 }
 
 @media only screen and (max-width:414px)

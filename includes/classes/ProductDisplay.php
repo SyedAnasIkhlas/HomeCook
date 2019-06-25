@@ -257,7 +257,7 @@
 							 </div>
 
 							 <div class='quantity'>
-							 	<input type='number' value='$quantityAddedToCart'>
+							 	<input type='number' name='quantity_in_cart' value='$quantityAddedToCart'>
 							 </div>
 
 						</div>";

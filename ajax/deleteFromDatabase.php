@@ -1,7 +1,9 @@
 <?php 
+session_start();
 	require_once '../includes/classes/GetIpAddress.php';
 	require_once ('../includes/connection/config.php');
 	require_once ('../includes/classes/User.php');
+	require_once ('../includes/classes/Cart.php');
 	
 		$usernameLoggedIn = isset($_SESSION['chef_name']) ? $_SESSION['chef_name'] : "" ;
  		$userLoggedInObj = new User($con, $usernameLoggedIn);
@@ -16,10 +18,19 @@
 			{
 				$ip_address = GetIpAddress::get_ip_address();
 
-				$query = $con->prepare("DELETE FROM `visiter_table` WHERE ip_address = :ip_address AND cook_id = :product_id");
+				$query = $con->prepare("DELETE FROM `visiter_table` WHERE cook_id = :product_id AND ip_address = :ip_address");
 				$query->bindParam(":ip_address",$ip_address); 
 				$query->bindParam(":product_id",$product_id); 
 				$query->execute();
+
+				if ($query) 
+				{
+					echo Cart::cook_id_of_items_in_cart($con, $userLoggedInObj);
+				}
+				else
+				{
+					echo Cart::cook_id_of_items_in_cart($con, $userLoggedInObj);
+				}
 
 				
 				
@@ -33,16 +44,30 @@
 				$query->bindParam(":user_id",$user_id); 
 				$query->bindParam(":product_id",$product_id); 
 				$query->execute();
+
+				if ($query) 
+				{
+					echo Cart::cook_id_of_items_in_cart($con, $userLoggedInObj);
+				}
+				else
+				{
+					echo Cart::cook_id_of_items_in_cart($con, $userLoggedInObj);
+				}
 			}
 
-			if ($query) 
-			{
-				echo "Del";
-			}
-			else
-			{
-				echo "error";
-			}
-	}
+			
+
+
+				
+		}
+
+		if (isset($_POST['cart']))
+		{
+			$cart = Cart::cartTotal($con, $userLoggedInObj);
+			echo $cart;	
+		}
+
+		
+
 
  ?>

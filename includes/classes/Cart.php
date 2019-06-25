@@ -1,6 +1,7 @@
 <?php 
 	require_once 'GetIpAddress.php';
 	require_once 'Product.php';
+	require_once 'ProductDisplay.php';
 	class Cart
 	{
 		public static function totalItemsInCart($con, $userLoggedInObj)
@@ -34,7 +35,7 @@
 
 		}
 
-		public static function cook_id_of_items_in_cart($con, $userLoggedInObj, $dataNeeded)
+		public static function cook_id_of_items_in_cart($con, $userLoggedInObj)
 		{
 			$user = $userLoggedInObj->isLoggedIn();
 
@@ -47,9 +48,10 @@
 
 				while($row = $query->fetch(PDO::FETCH_ASSOC))
 				{
-					$dataNeeded = $row[$dataNeeded];
-					$product_display = ProductDisplay::cart_product_display($con,$dataNeeded,$userLoggedInObj);
-					return $product_display;
+					$cook_id = $row['cook_id'];
+					$product_display = ProductDisplay::cart_product_display($con,$cook_id,$userLoggedInObj);
+					echo $product_display;
+					
 				}
 				
 				
@@ -64,15 +66,55 @@
 
 				while($row = $query->fetch(PDO::FETCH_ASSOC))
 				{
-					$dataNeeded = $row[$dataNeeded];
-					$product_display = ProductDisplay::cart_product_display($con,$dataNeeded,$userLoggedInObj);
-					return $product_display;
+					
+					$cook_id = $row['cook_id'];
+					$product_display = ProductDisplay::cart_product_display($con,$cook_id,$userLoggedInObj);
+					echo $product_display;
 				}
 				
 
 
 			}
 
+		}
+
+		//getting total price of items in cart and total quantity
+		public static function cartTotal($con, $userLoggedInObj)
+		{
+		
+			$user = $userLoggedInObj->isLoggedIn();
+
+			if ($user == "") 
+			{
+				$ip_address = GetIpAddress::get_ip_address();
+				$query = $con->prepare("SELECT sum(price) FROM `visiter_table` WHERE ip_address = :ip_address");
+				$query->bindParam(":ip_address",$ip_address);
+				$query->execute();
+
+
+				
+
+			}
+			else
+			{
+				$user_id = $userLoggedInObj->getUserId();
+				$query = $con->prepare("SELECT sum(price) FROM `customer_table` WHERE user_id = :user_id");
+				$query->bindParam(":user_id",$user_id);
+				$query->execute();
+			}
+
+			while ( $row = $query->fetch(PDO::FETCH_ASSOC)) 
+			{
+				$row = implode("=>", $row);
+				
+				if ($row == "") 
+				{
+					$row = 0;
+				}
+
+				return $row;
+			}
+			
 			
 
 		}
