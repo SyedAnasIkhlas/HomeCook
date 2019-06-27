@@ -31,6 +31,7 @@
 .itemsContainer .title-description
 {
     width:75%;
+    padding:12px;
 
 }
 
@@ -92,6 +93,20 @@
 .itemsContainer .quantity input
 {
     width:50px;
+}
+
+.quantity-and-Update
+{
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+}
+
+.quantity-and-Update .update-button-holder button
+{
+    margin-top:15px;
+    width:120px;
 }
 
 .cart-main-functions
@@ -244,6 +259,14 @@
 
        font-size:10px;
        width:80%;
+    }
+
+    .quantity-and-Update .update-button-holder button
+    {
+        margin-top:5px;
+        width:40px;
+        font-size:5px;
+        height:20px
     }
 
 }

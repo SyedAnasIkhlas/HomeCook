@@ -25,9 +25,8 @@
 </div>
 
 <div class='cart-main-functions'>
-	<button class="button remove-button btn-red" onclick='updateCart()'>Remove seleted items</button>
-	<button class="button update-button btn-green" onclick=''>Update cart</button>
-	<button class="button checkout-button btn-blue" onclick=''>Serve It</button>
+	<button class="button remove-button btn-red" onclick='deleteFromCart()'>Remove seleted items</button>
+	<button class="button checkout-button btn-blue" onclick='orderConformation()'>Serve It</button>
 
 
 </div>

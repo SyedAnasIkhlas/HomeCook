@@ -229,7 +229,9 @@
 					return"
 							<div class='itemsContainer'>
 								<div class='checkBox'>
-									<input type='radio' name='delete' value='$product_id'>
+									<label for='input'>
+										<input type='radio' name='delete' value='$product_id'>
+									</label>
 								</div>
 
 							<a href='dish?p_id=$product_id'>
@@ -256,9 +258,16 @@
 							 	$productPrice SR
 							 </div>
 
-							 <div class='quantity'>
-							 	<input type='number' name='quantity_in_cart' value='$quantityAddedToCart'>
-							 </div>
+							<div class='quantity-and-Update'>
+
+								 <div class='quantity'>
+								 	<input id='$product_id' type='number' name='quantity_in_cart' value='$quantityAddedToCart'>
+								 </div>
+
+								 <div class='update-button-holder'>
+								 	<button class='button btn-green' onclick='updateCart()'>Update Cart</button>
+								 </div>
+							</div>
 
 						</div>";
 				}
