@@ -265,7 +265,7 @@
 								 </div>
 
 								 <div class='update-button-holder'>
-								 	<button class='button btn-green' onclick='updateCart()'>Update Cart</button>
+								 	<button class='button btn-green' onclick='updateCart($product_id)'>Update Cart</button>
 								 </div>
 							</div>
 

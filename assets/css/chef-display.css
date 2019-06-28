@@ -1,0 +1,168 @@
+.main-chef-display
+{
+
+	width:20%;
+	display:flex;
+
+
+}
+
+.chef-data-container
+{
+
+	width:80%;
+	display:flex;
+	flex-direction:column;
+
+}
+
+.view-profile
+{
+	border:1px solid #2196F3;
+	border-bottom:none;
+	width:40%;
+	font-size:12px;
+	border-top-left-radius:5px;
+}
+
+.view-profile-span
+{
+
+}
+
+.chef-name
+{
+	border:1px solid #2196F3;
+	border-top-right-radius:5px;
+	display:flex;
+	padding-left:5px;
+	text-decoration:none;
+	color:#000;
+}
+
+.chef-name:hover
+{
+	color:#03A9F4;
+}
+
+.chef-image
+{
+	border:1px solid #2196F3;
+	border-top:none;
+	border-bottom:none;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height:150px;
+}
+
+.chef-image img
+{
+	
+}
+
+.follow-chef
+{
+	border:1px solid #2196F3;
+	display:flex;
+	justify-content:center;
+	background-color:#03ff0d;
+}
+
+.follow-chef:hover
+{
+	background-color:#21ea29;
+	cursor:pointer;
+}
+
+
+
+#followText
+{
+
+}
+
+.chef-star-indicator
+{
+	border:1px solid #2196F3;
+	border-left:none;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+	height:29px;
+	width:20px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	font-size:10px;
+	margin-top:181px;
+	text-align:center;
+}
+
+.star-indicater-text
+{
+	font-size:10px;
+	
+}
+
+.view-kitchen
+{
+	border:1px solid #2196F3;
+	border-top:none;
+	border-bottom-right-radius:5px;
+	border-bottom-left-radius:5px;
+	width:80%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	margin:0 auto;
+	background-color:#000;
+
+}
+
+.view-kitchen-a
+{
+	font-size:10px;
+	text-decoration:none;
+	color:white;
+}
+
+.view-kitchen-a:hover
+{
+	color:#000;
+}
+
+.view-kitchen:hover .view-kitchen-a
+{
+	
+	color:#000;
+}
+.view-kitchen:hover
+{
+	background-color:#fff;
+	cursor:pointer;
+}	
+
+.kitchen
+{
+
+	
+}
+
+.chef-country
+{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	border:1px solid #2196F3;
+	border-right:none;
+	height:29px;
+	width:25px;
+	border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+}
+
+.chef-country-name-text a
+{
+	font-size:10px;
+	text-decoration:none;
+}

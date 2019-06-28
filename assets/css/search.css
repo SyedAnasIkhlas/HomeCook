@@ -1,0 +1,21 @@
+.search-container
+{
+
+}
+
+.search-container .results-found
+{
+	display:flex;
+	justify-content:center;
+	border:1px solid #4CAF50;
+	border-radius:12px;
+	width:200px;
+	margin:0 auto;
+	margin-bottom:12px;
+	background-color:#abff1a;
+}
+
+.search-container.product-view-area
+{
+	
+}
