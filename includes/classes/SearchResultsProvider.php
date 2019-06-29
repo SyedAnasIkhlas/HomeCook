@@ -1,4 +1,7 @@
 <?php 
+
+	require_once 'Chef.php';
+	require_once 'ChefDisplay.php';
 	class SearchResultsProvider
 	{
 
@@ -12,7 +15,16 @@
 			{
 				while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
 				{
-					echo $chef_id = $row['id'];
+					$chef_id = $row['id'];
+					$chef = new Chef($con, $userLoggedInObj, $chef_id);
+					$chef_name = $chef->getChefName();
+					$chef_picture_path = $chef->getChefPicture();
+					$chef_country = $chef->getChefNationality();
+
+					$chef_preview = ChefDisplay::create($chef_id,$chef_name, $chef_picture_path);
+					echo $chef_preview;
+
+
 				}
 			}
 			else

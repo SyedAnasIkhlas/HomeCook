@@ -4,6 +4,8 @@
 		require_once ('includes/connection/config.php');
 		require_once ('includes/classes/User.php');
 		require_once ('includes/classes/ProductDisplay.php');
+		require_once ('includes/classes/ChefDisplay.php');
+		require_once ('includes/classes/Chef.php');
 		require_once 'includes/classes/SearchBarAndCartProvider.php';
 		require_once 'includes/classes/Product.php';
 		require_once ('includes/classes/Cart.php');
