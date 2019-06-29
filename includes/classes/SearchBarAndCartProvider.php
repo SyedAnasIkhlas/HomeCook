@@ -30,7 +30,7 @@
 				}
 				else
 				{
-					$product = ProductDisplay::product_display($con, $product_id, $userLoggedInObj);
+					// $product = ProductDisplay::product_display($con, $product_id, $userLoggedInObj);
 
 					while ($row = $query->fetch(PDO::FETCH_ASSOC)) 
 					{
@@ -38,7 +38,7 @@
 						$body = $product_id;
 						
 						// $body = ItemsInCart::totalItemsInCart($con, $userLoggedInObj);
-						$modal = Modal::createModal(null, $image, "Cart", $product,"Checkout","cart", 'cart',null);
+						// $modal = Modal::createModal(null, $image, "Cart", $product,"Checkout","cart", 'cart',null);
 					}
 				}	
 

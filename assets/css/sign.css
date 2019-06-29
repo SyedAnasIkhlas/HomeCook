@@ -179,14 +179,10 @@ a.a.sign
 		width:100%;
 		display:flex;
 		justify-content:flex-start;
-		margin-left:-100px;
+
 	}
 
-	.form-body input
-	{
-		width:150%;
-	}
-
+	
 	.signup-dropdown
 	{
 		width:150%;

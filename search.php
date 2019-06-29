@@ -6,7 +6,6 @@
 	}	
 
  ?>
-		<?php SearchResultsProvider::search_filter($con, $userLoggedInObj, $search_query); ?>
 
 
  <div class="search-container">
@@ -14,6 +13,11 @@
 	<div class="results-found">
 		<?php echo SearchResultsProvider::total_search_results_found($con, $userLoggedInObj, $search_query); ?>
 	</div>	
+	
+	<div class="chef-view-area">
+		<?php $search_result = SearchResultsProvider::search_filter($con, $userLoggedInObj, $search_query); ?>
+	</div>		
+	
 	<div class="product-view-area">
 		<?php
 			$search_result = SearchResultsProvider::search($con, $userLoggedInObj, $search_query, null, null, null);

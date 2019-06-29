@@ -13,6 +13,14 @@
 	margin:0 auto;
 	margin-bottom:12px;
 	background-color:#abff1a;
+	background-color:#faffff;
+}
+
+.search-container .results-found:hover
+{
+	background-color:#504d4d;
+	color:#fff;
+	cursor:pointer;
 }
 
 .search-container.product-view-area

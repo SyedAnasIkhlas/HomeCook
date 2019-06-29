@@ -1,9 +1,17 @@
+.chef-view-area
+{
+	padding:none;
+	margin:0px;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content:center;
+}
+
 .main-chef-display
 {
-
-	width:20%;
 	display:flex;
-
+	margin-bottom:5.5px;
+	margin-top:5.5px;
 
 }
 
@@ -66,6 +74,7 @@
 	border:1px solid #2196F3;
 	display:flex;
 	justify-content:center;
+	align-items:center;
 	background-color:#03ff0d;
 }
 
@@ -75,7 +84,12 @@
 	cursor:pointer;
 }
 
-
+.follow-chef img
+{
+	width:30px;
+	height:30px;
+	margin-left:4px;
+}
 
 #followText
 {
@@ -88,13 +102,13 @@
 	border-left:none;
 	border-top-right-radius:20px;
 	border-bottom-right-radius:20px;
-	height:29px;
-	width:20px;
+	height:32px;
+	width:50px;
 	display:flex;
 	justify-content:center;
 	align-items:center;
 	font-size:10px;
-	margin-top:181px;
+	margin-top:82%;
 	text-align:center;
 }
 
@@ -155,7 +169,7 @@
 	align-items:center;
 	border:1px solid #2196F3;
 	border-right:none;
-	height:29px;
+	height:25px;
 	width:25px;
 	border-top-left-radius:20px;
 	border-bottom-left-radius:20px;
