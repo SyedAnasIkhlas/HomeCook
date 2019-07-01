@@ -31,6 +31,9 @@
 		<script src="assets/js/AddNew.js"></script>
 
 		<!-- Add new country and city  js-->
+		<script src="assets/js/review.js"></script>
+
+		<!-- Add new country and city  js-->
 		<script src="assets/js/Cart.js"></script>
 
 		<!-- sign in and up page js -->

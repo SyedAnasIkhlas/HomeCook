@@ -1,0 +1,272 @@
+.itemsContainer
+{
+    margin-top:30px;
+    display:flex;
+    width:100%;
+    border-bottom:1px solid #eee;
+    padding-bottom:1%;
+    align-items:center;
+    justify-content:space-evenly
+
+}
+
+.itemsContainer .image
+{
+    width:100px;
+    height:100px;
+    border:1px solid #dedede;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.itemsContainer .image img
+{
+    width:90%;
+    height:90%;
+}
+
+
+
+.itemsContainer .title-description
+{
+    width:75%;
+    padding:12px;
+
+}
+
+.itemsContainer .title
+{
+    color:black;
+}
+
+.itemsContainer .title a
+{
+    color:black;
+}
+
+.itemsContainer .title a:hover
+{
+    color:#03A9F4;
+}
+
+.itemsContainer .description
+{
+    color:#000000d1;
+}
+
+.itemsContainer .stock-left
+{
+    color:#000000d1;
+    font-size:13px;
+    float:right;
+    border:1px solid #0be213;
+    border-radius:25px;
+    width:29%;
+    text-align:center;
+    cursor:pointer
+}
+
+.itemsContainer .stock-left:hover
+{
+    background:#0be213;
+}
+
+.itemsContainer .stock-left .stock-color
+{
+    color:#F44336;
+    font-size:13px;
+}
+
+
+
+.itemsContainer .price
+{
+    font-size:20px;
+}
+
+.itemsContainer .quantity
+{
+
+}
+
+.itemsContainer .quantity input
+{
+    width:50px;
+}
+
+.quantity-and-Update
+{
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+}
+
+.quantity-and-Update .update-button-holder button
+{
+    margin-top:15px;
+    width:120px;
+}
+
+.cart-main-functions
+{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:5%;
+    height:120px;
+    padding:3px;
+}
+
+.cart-main-functions button
+{
+   height:40px;
+   padding:5px;
+   width:190px;
+
+}
+
+.cart-main-functions .remove-button
+{
+    padding:3px;
+}
+
+#price-for-cart
+{
+    display:flex;
+    justify-content:flex-end;
+    padding-right:14px;
+    color:#212529;
+}
+
+.inline-price-tag
+{
+    display:flex;
+    margin-left:6px;
+    justify-content:space-evenly;
+    color:#f54956;
+    width:45px;
+}
+
+#price-value
+{
+    
+}
+
+@media only screen and (max-width:414px)
+{
+
+
+    .itemsContainer
+    {
+        display:flex;
+        width:100%;
+        border-bottom:1px solid #eee;
+        padding-bottom:1%;
+        align-items:center;
+        justify-content:space-evenly
+    }
+
+    .itemsContainer .image
+    {
+        width:50px;
+        height:50px;
+        border:1px solid #dedede;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .itemsContainer .image img
+    {
+        width:90%;
+        height:90%;
+    }
+
+
+
+    .itemsContainer .title-description
+    {
+        margin-left:2%;
+
+    }
+
+    .itemsContainer .title
+    {
+     font-size:10px;
+    }
+
+    .itemsContainer .description
+    {
+         font-size:5px;
+    }
+
+    .itemsContainer .price
+    {
+     font-size:10px;
+     margin:0;
+    }
+
+    .itemsContainer .quantity
+    {
+         font-size:10px;
+
+    }
+
+    .itemsContainer .quantity input
+    {
+        width:30px;
+        height:30px;
+    }
+
+    .itemsContainer .stock-left
+    {
+        color:#000000d1;
+        font-size:11px;
+        float:right;
+        border:1px solid #0be213;
+        border-radius:25px;
+        width:60%;
+        text-align:center;
+        cursor:pointer
+    }
+
+    .itemsContainer .stock-left:hover
+    {
+        background:#0be213;
+    }
+
+    .itemsContainer .stock-left .stock-color
+    {
+        color:#F44336;
+        font-size:10px;
+    }
+
+    .cart-main-functions
+    {
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        align-items:center;
+        margin-top:5%;
+        height:140px;
+        padding:3px;
+    }
+
+    .cart-main-functions button
+    {
+
+       font-size:10px;
+       width:80%;
+    }
+
+    .quantity-and-Update .update-button-holder button
+    {
+        margin-top:5px;
+        width:40px;
+        font-size:5px;
+        height:20px
+    }
+
+}

@@ -30,6 +30,8 @@
 		<!-- Add new country and city  js-->
 		<script src="assets/js/Cart.js"></script>
 
+		<script src="assets/js/review.js"></script>
+
 		<!-- sign in and up page js -->
 		<!-- sign.js-->
 		<script src="assets/js/Sign.js"></script>

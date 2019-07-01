@@ -3,6 +3,7 @@
 	//if its not working add homecook  and ../ in front of req1
 		require_once ('includes/connection/config.php');
 		require_once ('includes/classes/User.php');
+		require_once ('includes/classes/Review.php');
 		require_once ('includes/classes/ProductDisplay.php');
 		require_once ('includes/classes/ChefDisplay.php');
 		require_once ('includes/classes/Chef.php');

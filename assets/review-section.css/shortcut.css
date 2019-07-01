@@ -1,0 +1,706 @@
+/* Custom class or Style start here  */
+
+/*Border*/
+.border{
+
+	border: 1px solid #000;
+}
+
+.borderLR{
+
+	border-left: 1px solid #000; 
+	border-right: 1px solid #000; 
+}
+
+.borderLT{
+
+	border-left: 1px solid #000; 
+	border-top: 1px solid #000; 
+}
+
+.borderLB{
+
+	border-left: 1px solid #000; 
+	border-bottom: 1px solid #000; 
+}
+
+.borderRL{
+
+	border-right: 1px solid #000; 
+	border-left: 1px solid #000; 
+}
+
+.borderRT{
+
+	border-right: 1px solid #000; 
+	border-top: 1px solid #000; 
+}
+
+.borderRB{
+
+	border-right: 1px solid #000; 
+	border-bottom: 1px solid #000; 
+}
+
+.borderTL{
+
+	border-top: 1px solid #000; 
+	border-left: 1px solid #000; 
+}
+
+.borderTR{
+
+	border-top: 1px solid #000; 
+	border-right: 1px solid #000; 
+}
+
+.borderTB{
+
+	border-top: 1px solid #000; 
+	border-bottom: 1px solid #000; 
+}
+
+.borderBL{
+
+	border-bottom: 1px solid #000; 
+	border-left: 1px solid #000; 
+}
+
+.borderBR{
+
+	border-bottom: 1px solid #000; 
+	border-right: 1px solid #000; 
+}
+
+.borderBT{
+
+	border-bottom: 1px solid #000; 
+	border-top: 1px solid #000; 
+}
+
+/*no order onthis sides*/
+
+.noBorderLR{
+
+	border-left: none; 
+	border-right: none; 
+}
+
+.noBorderLT{
+
+	border-left: none; 
+	border-top: none; 
+}
+
+.noBorderLB{
+
+	border-left: none; 
+	border-bottom: none; 
+}
+
+.noBorderRL{
+
+	border-right: none; 
+	border-left: none; 
+}
+
+.noBorderRT{
+
+	border-right: none; 
+	border-top: none; 
+}
+
+.noBorderRB{
+
+	border-right: none; 
+	border-bottom: none; 
+}
+
+.noBorderTL{
+
+	border-top: none; 
+	border-left: none; 
+}
+
+.noBorderTR{
+
+	border-top: none; 
+	border-right: none; 
+}
+
+.noBorderTB{
+
+	border-top: none; 
+	border-bottom: none; 
+}
+
+.noBorderBL{
+
+	border-bottom: none; 
+	border-left: none; 
+}
+
+.noBorderBR{
+
+	border-bottom: none; 
+	border-right: none; 
+}
+
+.noBorderBT{
+
+	border-bottom: none 
+	border-top: none; 
+}
+
+.roundBorder{
+
+	border-radius: 2px;
+}
+
+.borderLR{
+
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.noBorderLR{
+
+	border-left: none;
+	border-right: none;
+}
+
+.borderTB{
+
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.noBorderTB{
+
+	border-top: none;
+	border-bottom: none;
+}
+
+.borderTop{
+
+	border-top: 1px solid black;
+}
+
+.borderBottom{
+
+	border-bottom: 1px solid black;
+}
+
+.borderLeft{
+
+	border-left: 1px solid black;
+}
+
+.borderRight{
+
+	border-right: 1px solid black;
+}
+
+.noBorder{
+
+	border:none;
+}
+
+.noBorderTop{
+
+	border-top: none;
+}
+
+.noBorderBottom{
+
+	border-bottom:none;
+}
+
+.noBorderLeft{
+
+	border-left:none;
+}
+
+.noBorderRight{
+
+	border-right: none;
+}
+
+
+/*Border*/
+/**/
+
+
+/* color */
+
+.black{
+
+	color: #000;
+}
+
+.white{
+
+	color: #fff;
+}
+
+.blue{
+
+	color: #0080FF;
+}
+
+.proBg{
+
+	background-color: #F1F1F1;
+
+}
+
+.noBg{
+
+	background-color: none;
+
+}
+
+/* color */
+
+/*Align*/
+
+.txtAligncenter{
+
+	text-align: center;
+}
+
+.txtAlignleft{
+
+	text-align: left;
+}
+
+.txtAlignright{
+
+	text-align: right;
+}
+
+.contentAlignCenter{
+
+	align-content: center;
+}
+
+.contentAlignLeft{
+
+	align-content: left; 
+}
+
+.contentAlignRight{
+
+	align-content: right;
+}
+
+.itemAlignCenter{
+
+	align-items: center;
+}
+
+.itemAlignLeft{
+
+	align-items: left; 
+}
+
+.itemAlignRight{
+
+	align-items: right;
+}
+
+/*Align*/
+
+/* Margin Style Start here  */
+
+.noMargin{
+
+	margin:none;
+}
+
+.marginRight{
+
+	margin-right: 2px;
+}
+
+.marginLeft{
+
+	margin-left: 2px;
+}
+
+.marginTop{
+
+	margin-top: 2px;
+}
+
+.marginBottom{
+
+	margin-bottom: 2px;
+}
+
+.marginLR{
+
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.marginLT{
+
+	margin-left: 2px;
+	margin-top: 2px;
+}
+
+.marginLB{
+
+	margin-left: 2px;
+	margin-bottom: 2px;
+}
+
+.marginRL{
+
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.marginRT{
+
+	margin-right: 2px;
+	margin-top: 2px;
+}
+
+.marginRB{
+
+	margin-right: 2px;
+	margin-bottom: 2px;
+}
+
+.marginTR{
+
+	margin-top: 2px;
+	margin-right: 2px;
+}
+
+.marginTL{
+
+	margin-left: 2px;
+	margin-top: 2px;
+}
+
+.marginTB{
+
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+.marginBR{
+
+	margin-bottom: 2px;
+	margin-right: 2px;
+}
+
+.marginBL{
+
+	margin-left: 2px;
+	margin-bottom: 2px;
+}
+
+.marginTL{
+
+	margin-top: 2px;
+	margin-left: 2px;
+}
+
+/*margin*/
+
+/*float*/
+
+.clear_floats{
+
+	clear: both;
+}
+
+.float_right{
+
+	float: right;
+}
+
+.float_left{
+
+	float: left;
+}
+
+/*float*/
+
+/*Bold*/
+.bold{
+
+	font-weight: bold;
+}
+/*Bold*/
+
+/*underline*/
+
+.noUnderlineWhite{
+
+	color: #fff;
+	text-decoration: none;
+
+}
+
+.noUnderline{
+
+	color: #000;
+	text-decoration: none;
+
+}
+
+.underline{
+
+	text-decoration: underline;
+}
+
+/*underline*/
+
+/*overline*/
+
+.overline{
+
+	text-decoration: overline;
+}
+
+/*overline*/
+
+/*hover*/
+
+.hoverColorWhite:hover{
+
+	color: #fff;
+	outline: #000;
+
+}
+
+.hoverColorBlack:hover{
+
+	color: #000;
+	outline: #fff;
+
+}
+
+.hoverColorBlue:hover{
+
+	color: #0080FF;
+	outline: #fff;
+
+}
+
+.hoverBold:hover{
+
+	font-weight: bold;
+}
+
+.hoverUnderline:hover{
+
+	text-decoration: underline;
+}
+
+.hoverBoldUnderline:hover{
+
+	text-decoration: underline;
+	font-weight: bold;
+
+}
+
+/*hover*/
+
+
+
+
+/*aTag*/
+.noDec{
+
+	text-decoration: none;
+}
+.colorBlue{
+
+	color: #0080FF;
+}
+
+.colorBlack{
+
+	color: #000;
+}
+
+.colorWhite{
+
+	color: #FFF;
+}
+/*aTag*/
+
+/*Padding*/
+
+	.padding{
+
+	padding: 2px;
+}
+
+.paddingLR{
+
+	padding-left: 2px;
+	padding-right: 2px; 
+}
+
+.paddingLT{
+
+	padding-left: 2px; 
+	padding-top: 2px; 
+}
+
+.paddingLB{
+
+	padding-left: 2px; 
+	padding-bottom: 2px; 
+}
+
+.paddingRL{
+
+	padding-right: 2px; 
+	padding-left: 2px; 
+}
+
+.paddingRT{
+
+	padding-right: 2px;
+	padding-top: 2px; 
+}
+
+.paddingRB{
+
+	padding-right: 2px;  
+	padding-bottom: 2px; 
+}
+
+.paddingTL{
+
+	padding-top: 2px;
+	padding-left: 2px; 
+}
+
+.paddingTR{
+
+	padding-top: 2px;
+	padding-right: 2px; 
+}
+
+.paddingTB{
+
+	padding-top: 2px; 
+	padding-bottom: 2px; 
+}
+
+.paddingBL{
+
+	padding-bottom: 2px; 
+	padding-left: 2px; 
+}
+
+.paddingBR{
+
+	padding-bottom: 2px;  
+	padding-right: 2px; 
+}
+
+.paddingBT{
+
+	padding-bottom: 2px;  
+	padding-top: 2px; 
+}
+
+/*no paddding onthis sides*/
+
+.noPaddingLR{
+
+	padding-left: none; 
+	padding-right: none; 
+}
+
+.noPaddingLT{
+
+	padding-left: none; 
+	padding-top: none; 
+}
+
+.noPaddingLB{
+
+	padding-left: none; 
+	padding-bottom: none; 
+}
+
+.noPaddingRL{
+
+	padding-right: none; 
+	padding-left: none; 
+}
+
+.noPaddingRT{
+
+	padding-right: none; 
+	padding-top: none; 
+}
+
+.noPaddingRB{
+
+	padding-right: none; 
+	padding-bottom: none; 
+}
+
+.noPaddingTL{
+
+	padding-top: none; 
+	padding-left: none; 
+}
+
+.noPaddingTR{
+
+	padding-top: none; 
+	padding-right: none; 
+}
+
+.noPaddingTB{
+
+	padding-top: none; 
+	padding-bottom: none; 
+}
+
+.noPaddingBL{
+
+	padding-bottom: none; 
+	padding-left: none; 
+}
+
+.noPaddingBR{
+
+	padding-bottom: none; 
+	padding-right: none; 
+}
+
+.noPaddingBT{
+
+	padding-bottom: none 
+	padding-top: none; 
+}
+
+
+
+
+/*Padding*/
+
+
+
+
+
+.pointer{
+
+	cursor: pointer;
+}
+
+/* Custom class or Style End here  */
