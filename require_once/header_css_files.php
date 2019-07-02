@@ -3,6 +3,7 @@
 	<link rel="stylesheet" type="text/css" href="../homecook/assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="../homecook/assets/css/search.css">
 	<link rel="stylesheet" type="text/css" href="../homecook/assets/css/dish.css">
+	<link rel="stylesheet" type="text/css" href="../homecook/assets/css/kitchen.css">
 	<link rel="stylesheet" type="text/css" href="../homecook/assets/css/review-section.css">
 	<link rel="stylesheet" type="text/css" href="../homecook/assets/css/chef-display.css">
 	<link rel="stylesheet" type="text/css" href="../homecook/assets/css/header.css">

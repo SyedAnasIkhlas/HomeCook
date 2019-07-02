@@ -1,16 +1,3 @@
-.center-content.signup
-{
-	border:1px solid #DBDBDB;
-	border-radius:5px;
-	margin:0 auto;
-	box-sizing:border-box;
-	width:430px;
-	min-height: 800px;
-	max-height:1000px;
-	display:flex;
-	flex-direction:column;
-}
-
 .center-content
 {
 	border:1px solid #DBDBDB;
@@ -165,55 +152,6 @@ a.a.sign
 {
 	display: block;
 }
-.not-found-container
-{
-	display:flex;
-	justify-content:center;
-	flex-direction:column;
-	align-items:center;
-	margin:0 auto;
-	width:100%;
-	height:100%;
-	margin-top:140px;
-	flex-wrap:wrap;
-	text-align:center;
-}
-
-.not-found-container img
-{
-	width:60px;
-	height:60px;
-}
-
-.not-found-container span
-{
-	font-size:60px;
-}
-
-
-
-
-
-
-@media  only screen and (max-width:786px)
-{
-	.not-found-container
-	{
-		margin:0 auto;
-		margin-top:190px;
-		margin-right:470px;
-	}
-	
-	{
-		width:50px;
-		height:50px;
-	}
-
-	.not-found-container span
-	{
-		font-size:30px;
-	}
-}
 
 
 @media screen and (width:1024px)
@@ -228,10 +166,13 @@ a.a.sign
 		width:100%;
 		display:flex;
 		justify-content:flex-start;
-
 	}
 
-	
+	.form-body input
+	{
+		width:150%;
+	}
+
 	.signup-dropdown
 	{
 		width:150%;

@@ -1,7 +1,7 @@
 <?php 
 class Chef{
 
-		private $con, $chef_id, $userLoggedInObj, $chef_data;
+		private $con, $chef_id, $userLoggedInObj, $chef_data,$rowCount;
 
 		public function __construct($con, $userLoggedInObj, $chef_id)
 		{
@@ -13,10 +13,16 @@ class Chef{
 			$query->bindParam(":chef_id",$chef_id);
 			$query->execute();
 
+			$this->rowCount = $query->rowCount();
+
 			$this->chef_data = $query->fetch(PDO::FETCH_ASSOC);
 		}
 
 
+		public function chefExisit()
+		{
+			return $this->rowCount;
+		}
 
 		public function getChefId()
 		{

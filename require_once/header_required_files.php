@@ -5,6 +5,7 @@
 		require_once ('includes/classes/User.php');
 		require_once ('includes/classes/Review.php');
 		require_once ('includes/classes/ProductDisplay.php');
+		require_once ('includes/classes/CreateUserProfile.php');
 		require_once ('includes/classes/ChefDisplay.php');
 		require_once ('includes/classes/Chef.php');
 		require_once 'includes/classes/SearchBarAndCartProvider.php';
